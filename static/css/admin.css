@@ -1,0 +1,345 @@
+/* Quick and Dirty Amdin-Theming */
+
+:root {
+  --bg-color: #4d4646;
+  --font-color: #f5eaea;
+  --primary-color: #7fcd91;
+  --secondary-color: #5b5656;
+  --error-color: #c17474;
+}
+
+#branding h1 {
+  font-family: "Ubuntu Mono", monospace !important;
+  font-weight: 700 !important;
+  font-size: 39px !important;
+  font-style: normal;
+}
+
+#branding h1,
+#branding h1 a:link,
+#branding h1 a:visited {
+  font-family: "Ubuntu Mono", monospace !important;
+  color: var(--primary-color);
+}
+
+#header {
+  background: var(--bg-color);
+  color: var(--primary-color);
+}
+
+#header a:link,
+#header a:visited {
+  color: var(--primary-color);
+}
+
+#header a:hover {
+  color: var(--primary-color);
+}
+
+div.breadcrumbs {
+  background: var(--font-color);
+  color: var(--secondary-color);
+}
+
+div.breadcrumbs a {
+  color: var(--bg-color);
+}
+
+div.breadcrumbs a.active {
+  color: var(--primary-color);
+}
+
+div.breadcrumbs a:focus,
+div.breadcrumbs a:hover {
+  color: var(--error-color);
+}
+
+.select2-container--admin-autocomplete
+  .select2-results__option--highlighted[aria-selected] {
+  background-color: var(--bg-color);
+}
+
+#nav-sidebar .current-model {
+  background: var(--font-color);
+}
+
+.paginator a:link,
+.paginator a:visited {
+  background: var(--bg-color);
+}
+
+.button,
+input[type="submit"],
+input[type="button"],
+.submit-row input,
+a.button {
+  background: var(--secondary-color);
+}
+
+.button:hover,
+input[type="submit"]:hover,
+input[type="button"]:hover {
+  background: var(--primary-color);
+}
+
+.module h2,
+.module caption,
+.inline-group h2 {
+  background: var(--bg-color);
+}
+
+#user-tools a:focus,
+#user-tools a:hover {
+  border: 0;
+  color: var(--font-color);
+}
+
+.selector-chosen h2 {
+  background: var(--bg-color);
+}
+
+.calendar td.selected a {
+  background: var(--bg-color);
+}
+
+.calendar td a:focus,
+.timelist a:focus,
+.calendar td a:hover,
+.timelist a:hover {
+  background: var(--bg-color);
+}
+
+#changelist-filter li.selected a {
+  color: #444;
+}
+
+fieldset.collapsed .collapse-toggle {
+  color: #444;
+}
+
+a:link,
+a:visited {
+  color: var(--primary-color);
+}
+a:focus,
+a:hover {
+  color: var(--secondary-color);
+}
+
+table thead th.sorted .sortoptions a.sortremove:focus:after,
+table thead th.sorted .sortoptions a.sortremove:hover:after {
+  color: #444;
+}
+
+a.active.selector-chooseall:focus,
+a.active.selector-clearall:focus,
+a.active.selector-chooseall:hover,
+a.active.selector-clearall:hover {
+  color: #0353dc;
+}
+
+.calendar td a:active,
+.timelist a:active {
+  background: #444;
+}
+
+.change-list ul.toplinks .date-back a:focus,
+.change-list ul.toplinks .date-back a:hover {
+  color: #222;
+}
+
+.paginator a.showall:focus,
+.paginator a.showall:hover {
+  color: #222;
+}
+
+.paginator a:focus,
+.paginator a:hover {
+  background: #222;
+}
+
+#changelist-filter a:focus,
+#changelist-filter a:hover,
+#changelist-filter li.selected a:focus,
+#changelist-filter li.selected a:hover {
+  color: #222;
+}
+
+.calendar td a:active,
+.timelist a:active {
+  background: var(--bg-color);
+  color: var(--font-color);
+}
+
+.calendar caption,
+.calendarbox h2 {
+  background: var(--primary-color);
+}
+
+.button.default,
+input[type="submit"].default,
+.submit-row input.default {
+  background: var(--bg-color);
+}
+
+.button.default:hover,
+input[type="submit"].default:hover {
+  background: var(--primary-color);
+}
+
+.select2-container--admin-autocomplete
+  .select2-results__option--highlighted[aria-selected] {
+  background-color: var(--bg-color);
+}
+
+.button.default,
+input[type="submit"].default,
+.submit-row input.default {
+  background: var(--bg-color);
+}
+
+.object-tools a:focus,
+.object-tools a:hover {
+  background-color: var(--bg-color);
+}
+
+input[type="file"]::-webkit-file-upload-button:hover {
+  border: 0;
+  background: var(--bg-color);
+}
+
+body {
+  font-family: "Ubuntu Mono", monospace, sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  font-style: normal;
+}
+
+label {
+  font-size: 17px !important;
+}
+
+a {
+  font-family: "Ubuntu Mono", monospace, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+p {
+  font-family: "Ubuntu Mono", monospace, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+h1 {
+  font-family: "Ubuntu Mono", monospace, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+table,
+th,
+td {
+  font-family: "Ubuntu Mono", monospace, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 21px;
+}
+
+input {
+  font-family: "Ubuntu Mono", monospace, sans-serif !important;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 18px;
+}
+
+textarea {
+  font-family: "Ubuntu Mono", monospace, sans-serif !important;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 22px;
+  width: 90% !important;
+}
+
+.wmd-preview p {
+  font-family: "Ubuntu Mono", monospace, sans-serif !important;
+  font-size: 16px !important;
+}
+
+.wmd-preview {
+  font-family: "Ubuntu Mono", monospace, sans-serif !important;
+  width: 100% !important;
+  max-width: 1080px !important;
+  font-size: 16px !important;
+}
+
+.wmd-input {
+  font-family: "Ubuntu Mono", monospace, sans-serif !important;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 21px !important;
+  width: 95% !important;
+}
+
+.wmd-wrapper {
+  width: 100% !important;
+}
+
+.markdownx {
+  width: 95% !important;
+}
+
+.markdownx-preview {
+  font-family: "Ubuntu Mono", monospace, sans-serif !important;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 21px !important;
+}
+p {
+  font-family: "Ubuntu Mono", monospace, sans-serif !important;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 18px !important;
+}
+
+@media only screen and (max-width: 1024px) {
+  body {
+    font-size: 20px !important;
+  }
+
+  input {
+    font-family: "Ubuntu Mono", monospace, sans-serif !important;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 23px;
+  }
+
+  textarea {
+    font-family: "Ubuntu Mono", monospace, sans-serif !important;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 23px;
+    width: 95% !important;
+  }
+
+  table,
+  th,
+  td {
+    font-family: "Ubuntu Mono", monospace, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 21px !important;
+  }
+
+  .form-row input[type="text"],
+  .form-row input[type="password"],
+  .form-row input[type="email"],
+  .form-row input[type="url"],
+  .form-row input[type="tel"],
+  .form-row input[type="number"],
+  .form-row textarea,
+  .form-row select,
+  .form-row .vTextField {
+    font-size: 20px !important;
+  }
+}

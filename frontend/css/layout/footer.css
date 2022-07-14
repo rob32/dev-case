@@ -1,0 +1,20 @@
+footer ul {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  padding: 0;
+}
+
+footer ul a {
+  margin: 0 2rem;
+}
+
+footer p {
+  font-size: 0.8rem;
+}
+
+footer a:hover,
+footer a:focus {
+  font-weight: 700;
+}

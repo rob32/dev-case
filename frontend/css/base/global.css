@@ -1,0 +1,84 @@
+html {
+  font-size: 100%;
+}
+
+body {
+  background: var(--bg-color);
+  font-family: "Ubuntu Mono", monospace;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--font-color);
+  /* Sticky Footer */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+footer {
+  margin-top: auto;
+}
+
+hr {
+  width: 35%;
+  color: var(--primary-color);
+}
+
+/* Simple Default Form */
+
+form ul {
+  margin: 0;
+  padding: 0;
+}
+
+form label {
+  display: block;
+  margin: 0.5rem 0;
+}
+
+form input,
+textarea {
+  width: 500px;
+  background: var(--secondary-color);
+  border: 1px solid var(--primary-color);
+  color: var(--font-color);
+}
+
+form button {
+  border: 0px;
+  background-color: var(--secondary-color);
+  color: var(--font-color);
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+}
+
+form button:hover {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  font-weight: 700;
+}
+
+code {
+  background: var(--secondary-color);
+  font-family: "Ubuntu Mono", monospace;
+  color: var(--primary-color);
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 5px;
+  padding: 0.2rem 0.3rem;
+}
+
+pre code {
+  display: block;
+  background: var(--secondary-color);
+  border: 1px solid var(--primary-color);
+  font-size: 1rem;
+  line-height: 1.3rem;
+  white-space: pre;
+  overflow-x: scroll;
+  max-width: 100%;
+  min-width: 100px;
+  /* padding: 0; */
+  /* padding-left: 0.3rem; */
+  padding: 0.7rem 0.5rem;
+  margin-bottom: 2.5rem;
+}

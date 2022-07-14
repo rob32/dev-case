@@ -1,0 +1,11 @@
+.btn-small {
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.btn-small:hover {
+  background-color: var(--primary-color);
+  color: var(--bg-color);
+}

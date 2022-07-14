@@ -1,0 +1,39 @@
+.project-wrapper {
+  margin-top: 3.5rem;
+}
+
+.project-card {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2.5rem;
+}
+
+.project-card__img {
+  width: 150px;
+  margin: 0 2rem 0 0;
+}
+
+.project-card__content {
+  max-width: 30rem;
+}
+
+.project-card__header {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1.8rem;
+}
+
+.project-card__text {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.projetc-card__tags {
+  padding-left: 0;
+  margin: 0;
+}
+
+.projetc-card__tags li {
+  display: inline;
+  font-size: 1rem;
+}

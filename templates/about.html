@@ -1,0 +1,98 @@
+{% extends "base.html"%}
+{% load static %}
+{% load markdown_tags %}
+{% block title%} - About{% endblock title %}
+
+{% block content %}
+
+{% comment %} TODO: include only used SVG's {% endcomment %}
+{% include "icons.html" %}
+
+<main>
+
+  <section class="small-container about-hero margin-top">
+    <h1 class="main-headline text-center">About Me</h1>
+    <div class="profile-wrapper">
+      {% if about_config.image %}
+      <div class="profile margin-top">
+        <img class="profile__image" src="{{ about_config.image.url }}" alt="me" />
+      </div>
+      {% endif %}
+    </div>
+    <div class="padding-top flex">
+      {% include '_social_accounts.html' %}
+    </div>
+  </section>
+
+  <div class="small-container margin-top">
+    <p class="lead">{{ about_config.intro_text }}</p>
+  </div>
+
+  <!-- Skills -->
+  <section class="small-container skills">
+    <div class="skills__wrapper">
+      <h4>Skills</h4>
+      <ul>
+        {% for skill in about_config.skills_as_list %}
+        <li>{{ skill }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="skills__wrapper">
+      <h4>Tools</h4>
+      <ul>
+        {% for tool in about_config.tools_as_list %}
+        <li>{{ tool }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="skills__wrapper">
+      <h4>Interessts</h4>
+      <ul>
+        {% for interesst in about_config.interessts_as_list %}
+        <li>{{ interesst }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+  </section>
+  <!-- /Skills -->
+
+  <hr class="long-line" />
+
+  {% if about_config.resume %}
+  <a class="link-bold flex margin-top" href="{{ about_config.resume.url }}">
+    <svg class="icon icon-arrow-right" aria-hidden="true" focusable="false">
+      <use xlink:href="#icon-arrow-right"></use>
+    </svg>
+    Resume
+  </a>
+  {% endif %}
+
+  <section class="small-container">
+    <div class="text-card">
+      <div class="md-content">
+        <p class="text-card__text">{{ about_config.markdown_content | markdown | safe }}</p>
+      </div>
+    </div>
+
+    {% comment %}
+    <hr class="short-line" />
+
+    <h3>Education</h3>
+    <div class="text-card">
+      <p class="text-card__date">2019-2022</p>
+      <p class="text-card__text">
+        After my civilian service in Freiburg I moved to Berlin in 2010. Here I successfully completed my degree as
+        a "design and media technical assistant". Afterwards, 2019, I finally started to follow my dream: to become
+        certified as an IT specialist for application development. I successfully passed the written examination at
+        the end of 2021.
+      </p>
+    </div> {% endcomment %}
+
+    <hr class="short-line" />
+  </section>
+  <!-- /Wokrk-Education -->
+</main>
+
+
+{% endblock content %}

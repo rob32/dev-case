@@ -1,0 +1,43 @@
+{% extends "base.html"%}
+{% load static %}
+{% block title%} - Contact{% endblock title %}
+
+{% block content %}
+
+<main>
+
+  <h2 class="main-headline text-center">Contact</h2>
+  <div class="small-container margin-top flex">
+
+    <form action="" method="POST">
+      {% csrf_token %}
+      <ul>
+        <li>
+          <label for="{{ form.user_name.id_for_label }}">Name</label>
+          {% comment %} <input type="text" name="user_name" id="name"> {% endcomment %}
+          {{ form.user_name }}
+        </li>
+        <li>
+          <label for="{{ form.user_email.id_for_label }}">Email</label>
+          {% comment %} <input type="email" name="user_email" id="email"> {% endcomment %}
+          {{ form.user_email }}
+        </li>
+        <li>
+          <label for="{{ form.user_message.id_for_label }}">Message</label>
+          {% comment %} <textarea name="user_message" id="msg" cols="30" rows="10"></textarea> {% endcomment %}
+          {{ form.user_message }}
+        </li>
+        <li>
+          <button type="submit">Send message</button>
+        </li>
+      </ul>
+    </form>
+
+  </div>
+
+  {% if is_submitted %}
+  <p class="lead text-center margin-top">Thanks for your message. I will contact you as soon as possible.</p>
+  {% endif %}
+
+</main>
+{% endblock content %}

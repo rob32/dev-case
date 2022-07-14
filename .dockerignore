@@ -1,0 +1,6 @@
+.gitignore
+.git
+.vscode
+venv
+README
+node_modules

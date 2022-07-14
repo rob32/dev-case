@@ -1,0 +1,27 @@
+.md-content p {
+  font-size: 1.2rem;
+}
+
+.md-content h1 {
+  font-size: 2.5rem;
+}
+
+.md-content h2 {
+  font-size: 2.2rem;
+}
+
+.md-content h3 {
+  font-size: 2rem;
+}
+
+.md-content ul a {
+  font-size: 1.15rem;
+}
+
+.md-content a:hover {
+  font-weight: 700;
+}
+
+.toc {
+  margin-top: 1rem;
+}

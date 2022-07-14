@@ -1,0 +1,35 @@
+.article-wrapper {
+  flex-direction: column;
+}
+
+.article-card {
+  background-color: var(--secondary-color);
+  border-radius: 1.2rem;
+  width: 100%;
+  flex-grow: 1;
+  position: relative;
+  cursor: pointer;
+}
+
+.article-card:hover {
+  /* border: 1px solid var(--primary-color); */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.article-card__header {
+  font-size: 1.5rem;
+  margin: 1rem 1rem 0rem;
+}
+
+.article-card__link::before {
+  content: " ";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.article-card__date {
+  margin: 0.5rem 1rem 1rem;
+}

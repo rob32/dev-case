@@ -1,0 +1,28 @@
+.logo {
+  font-family: "Ubuntu Mono", monospace;
+  color: var(--font-color);
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+.navbar {
+  height: 80px;
+}
+
+.navbar ul {
+  display: flex;
+}
+
+.navbar a {
+  padding: 10px;
+  margin: 0 5px;
+}
+
+.navbar ul a:hover {
+  border-bottom: 2px var(--primary-color) solid;
+}
+
+.navbar .flex {
+  justify-content: space-between;
+}

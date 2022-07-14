@@ -1,0 +1,21 @@
+# Django
+*.log
+# db.sqlite3
+# db.sqlite3-journal
+media
+
+# Python
+*.egg-info
+*.pot
+*.py[co]
+__pycache__
+
+# Eenvironment
+venv/
+.venv/
+node_modules/
+.env
+
+# IDE
+.idea/
+.vscode/

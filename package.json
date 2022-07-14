@@ -1,0 +1,23 @@
+{
+  "name": "d-c",
+  "version": "1.0.0",
+  "description": "CSS/JS bundling for Django",
+  "main": "esbuild.js",
+  "type": "module",
+  "scripts": {
+    "clean": "rm -rf static/css/style.css && rm -rf static/js/main.js",
+    "build": "npm run clean && node esbuild.js",
+    "watch": "npm run clean && node esbuild.js -- --dev",
+    "start": "concurrently -c \"yellow.bold,blue.bold\" --names \"esbuild,runserver\" --kill-others \"node esbuild.js -- --dev\" \"python3 manage.py runserver\" "
+  },
+  "repository": {
+    "type": "git",
+    "url": "box-8711@git.hidrive.strato.com:/users/box-8711/Repos/django/d-c.git"
+  },
+  "author": "Robert Burkhardt",
+  "license": "GNU GPLv3",
+  "devDependencies": {
+    "concurrently": "^7.2.0",
+    "esbuild": "^0.14.39"
+  }
+}

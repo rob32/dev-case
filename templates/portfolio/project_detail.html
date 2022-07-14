@@ -1,0 +1,48 @@
+{% extends "base.html"%}
+{% load static %}
+{% load markdown_tags %}
+{% block title%} - {{ project.title }}{% endblock title %}
+{% block styles %}
+<link href="{% static 'vendor/style-codehilite.css' %}" rel="stylesheet" />
+{% endblock styles %}
+
+{% block content %}
+<main>
+
+  <section class="container margin-top">
+    <h1 class="main-headline text-center">{{ project.title }}</h1>
+    <div class="flex">
+      <div class="project-image">
+        <img class="margin-top" src="{{ project.image.url }}" alt="{{ project.title}}-image" />
+      </div>
+    </div>
+    <div class="small-container">
+      <div class="details-wrapper">
+        <div>
+          <h2 class="details-item">Techstack</h2>
+          <ul class="details-item__list">
+            <li>{{ project.display_techstack }}</li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="details-item">Tools</h2>
+          <ul class="details-item__list">
+            <li>{{ project.display_tools }}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="small-container">
+    <h2 class="subtitle">{{ project.subtitle }}</h2>
+    <div class="text-card">
+      <p class="text-card__date"><time>{{ project.created|date:"SHORT_DATE_FORMAT" }}</time></p>
+      <div class="md-content">
+        <p class="text-card__text">{{ project.content | markdown | safe }}</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+{% endblock content %}

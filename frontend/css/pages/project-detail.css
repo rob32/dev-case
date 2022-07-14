@@ -1,0 +1,26 @@
+.details-wrapper {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2px solid var(--primary-color);
+}
+
+.details-item__list {
+  display: flex;
+  padding: 0;
+  margin-top: 0;
+}
+
+.details-item {
+  font-size: 1.3rem;
+  color: var(--font-color);
+  margin-bottom: 0;
+  margin-top: 1.5rem;
+}
+
+.details-item__list li {
+  margin-right: 0.5rem;
+}
+
+.project-image {
+  width: 800px;
+}

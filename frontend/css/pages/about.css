@@ -1,0 +1,45 @@
+/* Profile/Hero */
+
+.profile-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.profile {
+  border-radius: 50%;
+  height: 200px;
+  width: 200px;
+}
+
+.profile__image {
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+}
+
+.about-hero .icon {
+  margin: 0 0.5rem;
+}
+
+/* Skills */
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.skills__wrapper {
+  width: 230px;
+  text-align: center;
+}
+
+.skills h4 {
+  margin-bottom: 0;
+}
+
+.skills ul {
+  list-style: inside;
+  display: inline-block;
+  text-align: left;
+}

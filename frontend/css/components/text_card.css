@@ -1,0 +1,13 @@
+.text-card {
+  margin-bottom: 2rem;
+}
+
+.text-card__date {
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.text-card__text {
+  font-family: "Source Sans Pro", system-ui, sans-serif;
+  font-size: 1.1rem;
+}

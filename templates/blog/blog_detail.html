@@ -1,0 +1,51 @@
+{% extends "base.html"%}
+{% load static %}
+{% load markdown_tags %}
+{% block title%} - {{ post.title }}{% endblock title %}
+{% block styles %}
+<link href="{% static 'vendor/style-codehilite.css' %}" rel="stylesheet" />
+{% endblock styles %}
+
+{% block content %}
+<main>
+
+  {% if post.image %}
+  <div class="container margin-top">
+    <div class="flex">
+      <div class="project-image">
+        <img class="margin-top" src="{{ post.image.url }}" alt="{{ post.title }}" />
+      </div>
+    </div>
+    <div class="small-container">
+      <div class="details-wrapper">
+        <div>
+          <h2 class="details-item">Author</h2>
+          <ul class="details-item__list">
+            <li>{{ post.author|title }}</li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="details-item">Tags</h2>
+          <ul class="details-item__list">
+            {% for cat in post.category.all %}
+            <li>{{ cat.name }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+
+  <article class="small-container">
+    <h1 class="title margin-top">{{ post.title }}</h1>
+    <div class="text-card">
+      <p class="text-card__date"><time>{{ post.created|date:"SHORT_DATE_FORMAT" }}</time></p>
+      <div class="md-content">
+        <p class="text-card__text">{{ post.content | markdown | safe }}</p>
+      </div>
+    </div>
+  </article>
+
+</main>
+{% endblock content %}

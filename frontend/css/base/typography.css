@@ -1,0 +1,79 @@
+p {
+  margin-bottom: 1rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 3rem 0 1.38rem;
+  font-family: "Source Sans Pro", system-ui, sans-serif;
+  font-weight: 400;
+  line-height: 1.3;
+  color: var(--primary-color);
+}
+
+h1 {
+  margin-top: 0;
+  font-size: 3.052rem;
+}
+
+h2 {
+  font-size: 2.441rem;
+}
+
+h3 {
+  font-size: 1.953rem;
+}
+
+h4 {
+  font-size: 1.563rem;
+}
+
+h5 {
+  font-size: 1.25rem;
+}
+
+small,
+.text_small {
+  font-size: 0.8rem;
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary-color);
+}
+
+p a:hover {
+  border-bottom: 1px var(--font-color) solid;
+}
+
+.link:hover {
+  border-bottom: 1px var(--primary-color) solid;
+}
+
+.link-bold:hover {
+  font-weight: 700;
+}
+
+.main-headline {
+  color: var(--primary-color);
+  font-weight: 400;
+  font-size: 1.8rem;
+}
+
+.title {
+  font-size: 2.8rem;
+}
+
+.subtitle {
+  font-size: 1.6rem;
+  margin-bottom: 1.3rem;
+}
+
+.lead {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 1.25rem;
+  line-height: 140%;
+}

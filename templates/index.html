@@ -1,0 +1,82 @@
+{% extends "base.html"%}
+{% load static %}
+{% block title%} - Home{% endblock title %}
+
+{% block content %}
+
+{% comment %} TODO: include only used SVG's {% endcomment %}
+{% include "icons.html" %}
+
+<!-- Hero -->
+<section class="small-container margin-top">
+  <h1 class="main-headline">{{ index_config.headline }}</h1>
+  <p class="lead">
+    {{ index_config.intro_text }}
+  </p>
+
+  <a class="link" href="{% url 'about' %}">
+    <svg class="icon icon-arrow-right" aria-hidden="true" focusable="false">
+      <use xlink:href="#icon-arrow-right"></use>
+    </svg>
+    About Me
+  </a>
+
+  <div class="padding-top">
+    {% include '_social_accounts.html' %}
+  </div>
+
+</section>
+<!-- /Hero -->
+
+<main>
+
+  <!-- Articles -->
+  <section class="small-container">
+    <h2 class="subtitle text-center">Recent Articles</h2>
+    <div class="article-wrapper flex margin-bottom">
+      {% for post in posts %}
+      <article class="article-card margin-top">
+        <h2 class="article-card__header">
+          <a class="article-card__link" href="{{ post.get_absolute_url }}">{{ post.title }}</a>
+        </h2>
+        <p class="article-card__date">
+          <time> {{ post.created|date:"Y-m-d" }}</time> -
+          {{ post.display_categories }}
+        </p>
+      </article>
+      {% endfor %}
+    </div>
+    <a class="link" href="{% url 'blog' %}">
+      <svg class="icon icon-arrow-right" aria-hidden="true" focusable="false">
+        <use xlink:href="#icon-arrow-right"></use>
+      </svg>
+      all Articles
+    </a>
+  </section>
+  <!-- /Articles -->
+
+  <!-- Projects -->
+  <section class="small-container">
+    <h2 class="subtitle text-center margin-bottom">Projects</h2>
+    <div class="project-wrapper">
+      {% for project in projects %}
+      <div class="project-card">
+        <img class="project-card__img" src="{{ project.thumbnail.url }}" alt="{{ project.title }}-image" />
+        <div class="project-card__content">
+          <h3 class="project-card__header">
+            <a class="link" href="{{ project.get_absolute_url }}">{{ project.title }}</a>
+          </h3>
+          <p class="project-card__text">{{ project.subtitle }}</p>
+          <ul class="projetc-card__tags">
+            <li>{{ project.display_techstack }}</li>
+          </ul>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+  <!-- /Projects -->
+</main>
+
+
+{% endblock content %}

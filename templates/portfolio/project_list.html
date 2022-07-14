@@ -1,0 +1,28 @@
+{% extends "base.html"%}
+{% load static %}
+{% block title%} - Projects{% endblock title %}
+
+{% block content %}
+
+<section class="small-container margin-top">
+
+  <h1 class="main-headline text-center margin-bottom">Projects</h1>
+  {% for project in projects %}
+  <div class="project-card">
+    <img class="project-card__img" src="{{ project.image.url }}" alt="{{ project.title }}-image" />
+    <div class="project-card__content">
+      <h2 class="project-card__header">
+        <a class="link" href="{{ project.get_absolute_url }}">{{ project.title }}</a>
+      </h2>
+      <p class="project-card__text">{{ project.subtitle }}</p>
+      <ul class="projetc-card__tags">
+        <li>{{ project.display_techstack }}</li>
+      </ul>
+    </div>
+  </div>
+  {% endfor %}
+
+</section>
+
+</main>
+{% endblock content %}

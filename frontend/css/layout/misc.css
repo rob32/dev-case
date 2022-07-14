@@ -1,0 +1,12 @@
+.short-line {
+  border: 0;
+  border-top: 2px solid var(--primary-color);
+  width: 5rem;
+  margin: 0;
+}
+
+.long-line {
+  width: 600px;
+  color: var(--primary-color);
+  margin-top: 1.5rem;
+}
