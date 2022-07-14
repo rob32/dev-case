@@ -1,14 +1,7 @@
 django ~=4.0
 django-solo==2.0.0
-Pillow==9.1.0
-django-environ==0.8.1
+Pillow==9.2.0
+django-environ==0.9.0
 markdown==3.3.7
 Pygments==2.12.0
 psycopg2-binary==2.9.3
-# django-simple-captcha
-# django-crispy-forms
-# django-ckeditor
-
-# psycopg2
-# or better:
-# psycopg2-binary
