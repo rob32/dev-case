@@ -162,7 +162,7 @@ Possible settings via environment variables:
 
 ```
 SECRET_KEY=insecure-secretkey12345
-DEBUG=TRUE
+DEBUG=FALSE
 ALLOWED_HOSTS=my-domain-name.com
 DATABASE_URL=psql://postgres:postgres@db:5432/postgres
 
@@ -173,6 +173,18 @@ FEED_DESCRIPTION="My feed description"
 # Deployment Notes
 
 WIP
+
+Example Security-Settings for production (via environment variables):
+
+```
+SECURE_SSL_REDIRECT=True
+SECURE_HSTS_SECONDS=2592000
+SECURE_HSTS_INCLUDE_SUBDOMAINS=True
+SECURE_HSTS_PRELOAD=True
+
+SESSION_COOKIE_SECURE=True
+CSRF_COOKIE_SECURE=True
+```
 
 # Contribution
 
