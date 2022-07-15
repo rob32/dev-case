@@ -5,9 +5,9 @@ Privacy friendly CMS, Blog and Portfolio made with Python & Django.
 
 **Important note**: Release of the first stable version is planned for end of July 2022.
 
-[![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
-[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 ![GitHub](https://img.shields.io/github/license/rob32/dev-case)
+[![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
+![Test-Lint Action](https://github.com/rob32/dev-case/actions/workflows/test-lint.yml/badge.svg)
 
 ---
 
@@ -180,7 +180,7 @@ Contributions, Feedback and Feature-Requests are always welcome.
 
 # Todo/Roadmap
 
-- CI for Tests & Code Quality
+- ~~CI for Tests & Code Quality~~
 - tweak default security & caching (settings)
 - tweak SEO
 - add/finish comments for Blog
@@ -203,7 +203,7 @@ A big thanks to the following great projects:
 
 # License
 
-The project is available under [GNU GPLv3](https://github.com/rob32/dev-case/LICENSE.md) Licence.
+The project is available under [GNU GPLv3](https://github.com/rob32/dev-case/blob/main/LICENSE.md) Licence.
 
 ---
 
