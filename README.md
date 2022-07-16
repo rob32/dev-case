@@ -28,7 +28,7 @@ Privacy friendly CMS, Blog and Portfolio made with Python & Django.
 - Favicon
 - Optimized for SEO
 - Sitemap (WIP)
-- Settings for S3 compatible-storage (optional WIP)
+- Settings for S3 compatible-storage (optional)
 - Email Notification (optional WIP)
 - Comments (optional WIP)
 
@@ -44,6 +44,7 @@ Privacy friendly CMS, Blog and Portfolio made with Python & Django.
   - [Tests](#tests)
 - [Settings & Example .env](#settings--example-env)
 - [Deployment Notes](#deployment-notes)
+  - [S3 Storage](#s3-storage)
 - [Contribution](#contribution)
 - [Todo/Roadmap](#todoroadmap)
 - [Acknowledgements](#acknowledgements)
@@ -184,6 +185,26 @@ SECURE_HSTS_PRELOAD=True
 
 SESSION_COOKIE_SECURE=True
 CSRF_COOKIE_SECURE=True
+```
+
+## S3 Storage
+
+Make sure that `USE_S3_STORAGE` is set to `True`.
+
+Possible settings for S3 compatible storage (via environment variables):
+
+```
+USE_S3_STORAGE
+AWS_ACCESS_KEY_ID
+AWS_SECRET_ACCESS_KEY
+AWS_STORAGE_BUCKET_NAME
+AWS_S3_REGION_NAME
+AWS_S3_ENDPOINT_URL
+AWS_S3_CUSTOM_DOMAIN
+AWS_LOCATION
+AWS_IS_GZIPPED (Boolean)
+AWS_S3_FILE_OVERWRITE (Boolean)
+AWS_DEFAULT_ACL
 ```
 
 # Contribution

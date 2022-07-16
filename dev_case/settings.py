@@ -34,6 +34,18 @@ DATABASE_URL = env.str("DATABASE_URL", default=False)
 FEED_TITLE = env.str("FEED_TITLE", default="Articles")
 FEED_DESCRIPTION = env.str("FEED_DESCRIPTION", default="Latest Articles")
 
+USE_S3_STORAGE = env.bool("USE_S3_STORAGE", default=False)
+AWS_ACCESS_KEY_ID = env.str("AWS_ACCESS_KEY_ID", default="")
+AWS_SECRET_ACCESS_KEY = env.str("AWS_SECRET_ACCESS_KEY", default="")
+AWS_STORAGE_BUCKET_NAME = env.str("AWS_STORAGE_BUCKET_NAME", default="")
+AWS_S3_REGION_NAME = env.str("AWS_S3_REGION_NAME", default="")
+AWS_S3_ENDPOINT_URL = env.str("AWS_S3_ENDPOINT_URL", default="")
+AWS_S3_CUSTOM_DOMAIN = env.str("AWS_S3_CUSTOM_DOMAIN", default="")
+AWS_LOCATION = env.str("AWS_LOCATION", default="")
+AWS_IS_GZIPPED = env.bool("AWS_IS_GZIPPED", default=False)
+AWS_S3_FILE_OVERWRITE = env.bool("AWS_S3_FILE_OVERWRITE", default=True)
+AWS_DEFAULT_ACL = env.str("AWS_DEFAULT_ACL", default="public-read")
+
 
 INSTALLED_APPS = [
     "django.contrib.admin",
@@ -130,13 +142,21 @@ USE_TZ = True
 
 # Static files & Media
 
-STATIC_URL = "static/"
 STATICFILES_DIRS = (str(BASE_DIR.joinpath("static")),)
 STATIC_ROOT = str(BASE_DIR.joinpath("staticfiles"))
-STATICFILES_STORAGE = "django.contrib.staticfiles.storage.StaticFilesStorage"
-
-MEDIA_URL = "/media/"
 MEDIA_ROOT = str(BASE_DIR.joinpath("media"))
+
+if USE_S3_STORAGE:
+    DEFAULT_FILE_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
+    STATICFILES_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
+
+    STATIC_URL = f"https://{AWS_S3_ENDPOINT_URL}/{STATIC_ROOT}/"
+    MEDIA_URL = f"https://{AWS_S3_ENDPOINT_URL}/{MEDIA_ROOT}/"
+
+else:
+    STATICFILES_STORAGE = "django.contrib.staticfiles.storage.StaticFilesStorage"
+    STATIC_URL = "static/"
+    MEDIA_URL = "/media/"
 
 
 # Settings for Local Development
