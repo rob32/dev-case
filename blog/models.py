@@ -111,7 +111,8 @@ class Comment(models.Model):
         null=False,
         max_length=63,
     )
-    message = models.TextField(max_length=1023, verbose_name="Message")
+    email = models.EmailField(null=True, blank=True, max_length=108)
+    message = models.TextField(max_length=420, verbose_name="Message")
     date = models.DateTimeField(auto_now_add=True, verbose_name="Date")
     public = models.BooleanField(default=False, verbose_name="Public")
 
