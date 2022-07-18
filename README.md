@@ -209,7 +209,7 @@ AWS_DEFAULT_ACL
 
 # Contribution
 
-Contributions, Feedback and Feature-Requests are always welcome.
+Contributions, Feedback and Feature-Requests are always welcome. To learn more, see the [Contributor Guide](https://github.com/rob32/dev-case/blob/main/CONTRIBUTING.md)
 
 # Todo/Roadmap
 
