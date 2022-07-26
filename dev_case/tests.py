@@ -21,3 +21,10 @@ class DefaultPageTest(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, "search.html")
         self.assertContains(response, "Search")
+
+
+class SitemapTest(TestCase):
+    def test_inital_sitemap(self):
+        response = self.client.get("/sitemap.xml")
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response["content-type"], "application/xml")

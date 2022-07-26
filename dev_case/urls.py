@@ -1,12 +1,21 @@
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
+from django.contrib.sitemaps.views import sitemap
 from django.urls import include, path
 
 from contact.views import contact
 
 from .feeds import BlogFeed
+from .sitemaps import BlogPostSitemap, PageSitemap, ProjectSitemap, StaticSitemap
 from .views import about, home, search
+
+sitemaps = {
+    "blog": BlogPostSitemap,
+    "project": ProjectSitemap,
+    "page": PageSitemap,
+    "static": StaticSitemap,
+}
 
 urlpatterns = [
     path("admin/", admin.site.urls),
@@ -18,6 +27,7 @@ urlpatterns = [
     path("projects/", include("portfolio.urls")),
     path("feed/", BlogFeed(), name="feed"),
     path("", include("pages.urls")),
+    path("sitemap.xml", sitemap, {"sitemaps": sitemaps}, name="sitemap"),
 ]
 
 admin.site.site_header = "Dev-Case Admin"  # "Django Administration"

@@ -54,6 +54,8 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "django.contrib.sites",
+    "django.contrib.sitemaps",
     "solo",
     "config",
     "blog",
@@ -61,6 +63,8 @@ INSTALLED_APPS = [
     "contact",
     "pages",
 ]
+
+SITE_ID = 1
 
 
 MIDDLEWARE = [
