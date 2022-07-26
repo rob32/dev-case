@@ -27,7 +27,7 @@ Privacy friendly CMS, Blog and Portfolio made with Python & Django.
 - Dark Django-Admin Theme
 - Favicon
 - Optimized for SEO
-- Sitemap (WIP)
+- Sitemap
 - Settings for S3 compatible-storage (optional)
 - Email Notification (optional WIP)
 - Comments (optional WIP)
@@ -45,6 +45,7 @@ Privacy friendly CMS, Blog and Portfolio made with Python & Django.
 - [Settings & Example .env](#settings--example-env)
 - [Deployment Notes](#deployment-notes)
   - [S3 Storage](#s3-storage)
+  - [Sitemap](#sitemap)
 - [Contribution](#contribution)
 - [Todo/Roadmap](#todoroadmap)
 - [Acknowledgements](#acknowledgements)
@@ -173,7 +174,7 @@ FEED_DESCRIPTION="My feed description"
 
 # Deployment Notes
 
-WIP
+**WIP**
 
 Example Security-Settings for production (via environment variables):
 
@@ -206,6 +207,10 @@ AWS_IS_GZIPPED (Boolean)
 AWS_S3_FILE_OVERWRITE (Boolean)
 AWS_DEFAULT_ACL
 ```
+
+## Sitemap
+
+Change *DOMAIN NAME* and *DISPLAY NAME* via Admin-Panel (Sites App) to your actual domain name. Default is set to "example.com".
 
 # Contribution
 
