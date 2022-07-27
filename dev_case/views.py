@@ -13,7 +13,7 @@ def home(request):
     main_config = MainConfig.get_solo()
     index_config = IndexSiteConfig.get_solo()
     social_accounts = SocialAccountsConfig.get_solo()
-    posts = BlogPost.objects.filter(status=1)
+    posts = BlogPost.objects.filter(status=1)[:3]
     projects = Project.objects.filter(status=1)
     pages = Page.objects.all()
     context = {
