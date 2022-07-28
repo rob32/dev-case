@@ -45,6 +45,7 @@ Privacy friendly CMS, Blog and Portfolio made with Python & Django.
 - [Settings & Example .env](#settings--example-env)
 - [Deployment Notes](#deployment-notes)
   - [S3 Storage](#s3-storage)
+  - [Admin Location](#admin-location)
   - [Sitemap](#sitemap)
 - [Contribution](#contribution)
 - [Todo/Roadmap](#todoroadmap)
@@ -167,6 +168,7 @@ SECRET_KEY=insecure-secretkey12345
 DEBUG=FALSE
 ALLOWED_HOSTS=my-domain-name.com
 DATABASE_URL=psql://postgres:postgres@db:5432/postgres
+ADMIN_LOCATION=dev-case/
 
 FEED_TITLE="My Feed Title"
 FEED_DESCRIPTION="My feed description"
@@ -207,6 +209,10 @@ AWS_IS_GZIPPED (Boolean)
 AWS_S3_FILE_OVERWRITE (Boolean)
 AWS_DEFAULT_ACL
 ```
+
+## Admin Location
+
+You can change the location for the admin area using the `ADMIN_LOCATION` environment variable. Default is `admin/`.
 
 ## Sitemap
 

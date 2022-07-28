@@ -7,6 +7,7 @@ from django.urls import include, path
 from contact.views import contact
 
 from .feeds import BlogFeed
+from .settings import ADMIN_LOCATION
 from .sitemaps import BlogPostSitemap, PageSitemap, ProjectSitemap, StaticSitemap
 from .views import about, home, search
 
@@ -18,7 +19,7 @@ sitemaps = {
 }
 
 urlpatterns = [
-    path("admin/", admin.site.urls),
+    path(ADMIN_LOCATION, admin.site.urls),
     path("", home, name="home"),
     path("about/", about, name="about"),
     path("contact/", contact, name="contact"),

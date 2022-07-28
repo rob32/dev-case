@@ -31,6 +31,8 @@ ALLOWED_HOSTS = env.list(
 
 DATABASE_URL = env.str("DATABASE_URL", default=False)
 
+ADMIN_LOCATION = env.str("ADMIN_LOCATION", default="admin/")
+
 FEED_TITLE = env.str("FEED_TITLE", default="Articles")
 FEED_DESCRIPTION = env.str("FEED_DESCRIPTION", default="Latest Articles")
 
