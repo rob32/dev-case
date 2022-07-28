@@ -8,7 +8,7 @@ from portfolio.models import Project
 
 class BlogPostSitemap(Sitemap):
     changefreq = "daily"
-    priority = 0.6
+    priority = 0.8
 
     def items(self):
         return BlogPost.objects.filter(status=1)
@@ -30,7 +30,7 @@ class ProjectSitemap(Sitemap):
 
 class PageSitemap(Sitemap):
     changefreq = "daily"
-    priority = 0.7
+    priority = 0.6
 
     def items(self):
         return Page.objects.all()
@@ -41,10 +41,10 @@ class PageSitemap(Sitemap):
 
 class StaticSitemap(Sitemap):
     changefreq = "weekly"
-    priority = 0.8
+    priority = 0.7
 
     def items(self):
-        return ["home", "about", "contact", "search"]
+        return ["home", "about"]
 
     def location(self, item):
         return reverse(item)
