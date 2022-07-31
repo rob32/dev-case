@@ -48,4 +48,24 @@
   </article>
 
 </main>
+
+<main>
+
+  <h2 class="main-headline text-center">comments</h2>
+  <div>
+    {% for comment in comments %}
+       <p> <h5>{{comment.author}} commented:</h5>{{comment.message}}</p>
+    {% endfor %}
+  </div>
+  <div class="small-container margin-top flex">
+
+    <form action="" method="POST">
+      {% csrf_token %}
+      {{form}}
+      <button type="submit" value="Submit">Submit</button>
+    </form>
+
+  </div>
+
+</main>
 {% endblock content %}
