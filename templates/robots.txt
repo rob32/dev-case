@@ -1,0 +1,6 @@
+User-Agent: *
+Disallow: /*.pdf$
+Disallow: /search/{% if disallow %}{% for entry in disallow %}
+Disallow: {{ entry }}{% endfor %}{% endif %}
+
+Sitemap: {{ sitemap }}

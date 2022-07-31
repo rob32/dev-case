@@ -1,9 +1,12 @@
 from django.contrib.sitemaps import Sitemap
+from django.contrib.sites.shortcuts import get_current_site
 from django.urls import reverse
 
 from blog.models import BlogPost
 from pages.models import Page
 from portfolio.models import Project
+
+from .settings import SESSION_COOKIE_SECURE
 
 
 class BlogPostSitemap(Sitemap):
@@ -48,3 +51,9 @@ class StaticSitemap(Sitemap):
 
     def location(self, item):
         return reverse(item)
+
+
+def get_sitemap_absolute_url(request):
+    domain = get_current_site(request)
+    scheme = "https" if SESSION_COOKIE_SECURE else "http"
+    return f"{scheme}://{domain}/sitemap.xml"

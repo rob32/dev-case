@@ -26,8 +26,8 @@ Privacy friendly CMS, Blog and Portfolio made with Python & Django.
 - Dynamic Pages (Footer)
 - Dark Django-Admin Theme
 - Favicon
-- Optimized for SEO
-- Sitemap
+- Optimized for good SEO
+- Dynamic sitemap.xml and robots.txt
 - Settings for S3 compatible-storage (optional)
 - Email Notification (optional WIP)
 - Comments (optional WIP)
@@ -46,7 +46,8 @@ Privacy friendly CMS, Blog and Portfolio made with Python & Django.
 - [Deployment Notes](#deployment-notes)
   - [S3 Storage](#s3-storage)
   - [Admin Location](#admin-location)
-  - [Sitemap](#sitemap)
+  - [Sitemap.xml](#sitemapxml)
+  - [Robots.txt](#robotstxt)
 - [Contribution](#contribution)
 - [Todo/Roadmap](#todoroadmap)
 - [Acknowledgements](#acknowledgements)
@@ -169,6 +170,7 @@ DEBUG=FALSE
 ALLOWED_HOSTS=my-domain-name.com
 DATABASE_URL=psql://postgres:postgres@db:5432/postgres
 ADMIN_LOCATION=dev-case/
+ROBOTS_DISALLOW=/contact/,/private-file.html`
 
 FEED_TITLE="My Feed Title"
 FEED_DESCRIPTION="My feed description"
@@ -214,9 +216,15 @@ AWS_DEFAULT_ACL
 
 You can change the location for the admin area using the `ADMIN_LOCATION` environment variable. Default is `admin/`.
 
-## Sitemap
+## Sitemap.xml
 
 Change *DOMAIN NAME* and *DISPLAY NAME* via Admin-Panel (Sites App) to your actual domain name. Default is set to "example.com".
+
+## Robots.txt
+
+To add *Disallow* rules, use the `ROBOTS_DISALLOW` environment variable. For a valid Sitemap entry change your domain name as described in [Sitemap.xml](#sitemapxml).
+
+Example: `ROBOTS_DISALLOW=/contact/,/private-file.html`
 
 # Contribution
 

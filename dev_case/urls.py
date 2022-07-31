@@ -9,7 +9,7 @@ from contact.views import contact
 from .feeds import BlogFeed
 from .settings import ADMIN_LOCATION
 from .sitemaps import BlogPostSitemap, PageSitemap, ProjectSitemap, StaticSitemap
-from .views import about, home, search
+from .views import about, home, robots_txt, search
 
 sitemaps = {
     "blog": BlogPostSitemap,
@@ -29,6 +29,7 @@ urlpatterns = [
     path("feed/", BlogFeed(), name="feed"),
     path("", include("pages.urls")),
     path("sitemap.xml", sitemap, {"sitemaps": sitemaps}, name="sitemap"),
+    path("robots.txt", robots_txt, name="robots_txt"),
 ]
 
 admin.site.site_header = "Dev-Case Admin"  # "Django Administration"

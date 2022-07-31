@@ -6,6 +6,9 @@ from config.models import MainConfig, SocialAccountsConfig
 from pages.models import AboutSiteConfig, IndexSiteConfig, Page
 from portfolio.models import Project
 
+from .settings import ROBOTS_DISALLOW
+from .sitemaps import get_sitemap_absolute_url
+
 # TODO: refactor and tweak queries
 
 
@@ -60,3 +63,11 @@ def search(request):
     }
 
     return render(request, "search.html", context=context)
+
+
+def robots_txt(request):
+    context = {
+        "sitemap": get_sitemap_absolute_url(request),
+        "disallow": ROBOTS_DISALLOW,
+    }
+    return render(request, "robots.txt", context=context, content_type="text/plain")

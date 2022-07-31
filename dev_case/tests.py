@@ -28,3 +28,11 @@ class SitemapTest(TestCase):
         response = self.client.get("/sitemap.xml")
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response["content-type"], "application/xml")
+
+
+class RobotsTest(TestCase):
+    def test_robots_txt_without_extra_rules(self):
+        response = self.client.get("/robots.txt")
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, "robots.txt")
+        self.assertEqual(response["content-type"], "text/plain")

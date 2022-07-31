@@ -33,6 +33,8 @@ DATABASE_URL = env.str("DATABASE_URL", default=False)
 
 ADMIN_LOCATION = env.str("ADMIN_LOCATION", default="admin/")
 
+ROBOTS_DISALLOW = env.list("ROBOTS_DISALLOW", default=None)
+
 FEED_TITLE = env.str("FEED_TITLE", default="Articles")
 FEED_DESCRIPTION = env.str("FEED_DESCRIPTION", default="Latest Articles")
 
