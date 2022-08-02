@@ -2,6 +2,11 @@
 {% load static %}
 {% load markdown_tags %}
 {% block title%} - About{% endblock title %}
+{% block meta %}
+{% if about_config.seo %}
+  <meta name="description" content="{{ about_config.seo }}">
+{% endif %}
+{% endblock meta %}
 
 {% block content %}
 

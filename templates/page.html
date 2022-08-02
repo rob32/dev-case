@@ -2,7 +2,11 @@
 {% load static %}
 {% load markdown_tags %}
 {% block title%} - {{page.title}}{% endblock title %}
-
+{% block meta %}
+{% if page.seo %}
+  <meta name="description" content="{{ page.seo }}">
+{% endif %}
+{% endblock meta %}
 {% block content %}
 
 <section class="small-container margin-top">

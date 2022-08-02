@@ -234,7 +234,7 @@ Contributions, Feedback and Feature-Requests are always welcome. To learn more, 
 
 - ~~CI for Tests & Code Quality~~
 - tweak default security & caching (settings)
-- tweak SEO
+- ~~tweak SEO~~
 - add/finish comments for Blog
 - add captchas
 - refactor views (queries)
