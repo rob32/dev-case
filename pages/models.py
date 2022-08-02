@@ -5,7 +5,7 @@ from solo.models import SingletonModel
 
 EXAMPLE_CONTENT = """
 
-## Work Experience
+## Lorem Ipsum
 
 Lorem ipsum dolor sit amet, **consectetur**.
 Lorem ipsum dolor sit amet, __consectetur__.
@@ -72,9 +72,12 @@ class IndexSiteConfig(SingletonModel):
         max_length=2047,
         default="Lorem ipsum dolor sit amet, consectetur",
     )
-    seo_description = models.CharField(
+    seo = models.TextField(
+        verbose_name="SEO Description",
         max_length=255,
-        default="Lorem ipsum dolor sit amet, consectetur",
+        blank=True,
+        null=True,
+        default=None,
     )
 
     class Meta:
@@ -123,9 +126,12 @@ class AboutSiteConfig(SingletonModel):
         blank=True,
         null=True,
     )
-    seo_description = models.CharField(
+    seo = models.TextField(
+        verbose_name="SEO Description",
         max_length=255,
-        default="Lorem ipsum dolor sit amet, consectetur",
+        blank=True,
+        null=True,
+        default=None,
     )
 
     class Meta:
