@@ -3,7 +3,7 @@
 
 Privacy friendly CMS, Blog and Portfolio made with Python & Django.
 
-**Important note**: Release of the first stable version is planned for end of July 2022.
+**Important note**: Release of the first stable version for production is planned on 10th August 2022.
 
 ![GitHub](https://img.shields.io/github/license/rob32/dev-case)
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
