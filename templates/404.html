@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>404</title>
+    <meta name="robots" content="noindex" />
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" />
+    {% block styles %}{% endblock styles %}
+    <script src="{% static 'js/main.js'%}"></script>
+    <link rel="icon" href="media/{{ main_config.favicon }}" type="image/png" />
+  </head>
+
+  <body>
+    <svg
+      aria-hidden="true"
+      style="position: absolute; width: 0; height: 0; overflow: hidden"
+      version="1.1"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+    >
+      <defs>
+        <symbol id="icon-arrow-right" viewBox="0 0 32 32">
+          <path
+            d="M15.057 7.609l7.057 7.057h-15.448c-0.736 0-1.333 0.597-1.333 1.333s0.597 1.333 1.333 1.333h15.448l-7.057 7.057c-0.521 0.521-0.521 1.365 0 1.885s1.365 0.521 1.885 0l9.333-9.333c0.123-0.123 0.221-0.269 0.289-0.432 0.135-0.327 0.135-0.695 0-1.021-0.065-0.157-0.161-0.304-0.289-0.432l-9.333-9.333c-0.521-0.521-1.365-0.521-1.885 0s-0.521 1.365 0 1.885z"
+          ></path>
+        </symbol>
+      </defs>
+    </svg>
+
+    <main>
+      <div class="error-wrapper">
+        <div class="text-center">
+          <h1 class="error-code">404</h1>
+          <h2>Page Not Found.</h2>
+          <p class="error-desc">
+            The Page you were looking for was moved or doesn't exist.
+          </p>
+          <a class="error-link__text" href="about.html">
+            <svg
+              class="icon icon-arrow-right error-link__icon"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <use xlink:href="#icon-arrow-right"></use>
+            </svg>
+            Back to Home
+          </a>
+        </div>
+      </div>
+    </main>
+
+    <script src="dist/js/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+.error-wrapper {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.error-code {
+  font-family: "Ubuntu Mono", monospace;
+  font-size: 7rem;
+  margin-bottom: 0rem;
+}
+
+.error-desc {
+  font-size: 1.7rem;
+}
+
+.error-link__icon {
+  width: 2rem;
+  height: 2rem;
+}
+
+.error-link__text {
+  font-size: 2rem;
+}
+
+.error-link__text:hover {
+  font-weight: 700;
+}
