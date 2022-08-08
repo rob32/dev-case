@@ -556,6 +556,17 @@ footer a:focus {
   font-weight: 700;
 }
 
+/* frontend/css/pages/contact.css */
+.captcha-label {
+  float: left;
+  margin-top: 1rem;
+}
+.captcha {
+  padding-left: 0.7rem;
+  padding-bottom: 0.7rem;
+  padding-top: 0.3rem;
+}
+
 /* frontend/css/util.css */
 .container {
   max-width: 1200px;

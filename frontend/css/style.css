@@ -26,6 +26,7 @@
 @import url("pages/blog.css");
 @import url("pages/search.css");
 @import url("pages/error-page.css");
+@import url("pages/contact.css");
 
 /* Utilities */
 @import url("util.css");
