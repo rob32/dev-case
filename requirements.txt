@@ -7,3 +7,4 @@ Pygments==2.12.0
 psycopg2-binary==2.9.3
 boto3==1.24.31
 django-storages==1.12.3
+django-simple-captcha==0.5.17

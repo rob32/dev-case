@@ -61,6 +61,7 @@ INSTALLED_APPS = [
     "django.contrib.sites",
     "django.contrib.sitemaps",
     "solo",
+    "captcha",
     "config",
     "blog",
     "portfolio",
@@ -201,3 +202,10 @@ SECURE_HSTS_PRELOAD = env.bool("SECURE_HSTS_PRELOAD", default=False)
 
 SESSION_COOKIE_SECURE = env.bool("SESSION_COOKIE_SECURE", default=False)
 CSRF_COOKIE_SECURE = env.bool("CSRF_COOKIE_SECURE", default=False)
+
+# Settings for Django-Simple-Capctha
+
+CAPTCHA_FONT_SIZE = 33
+CAPTCHA_LETTER_ROTATION = (-15, 15)
+CAPTCHA_NOISE_FUNCTIONS = ["captcha.helpers.noise_dots"]
+CAPTCHA_LENGTH = 3
