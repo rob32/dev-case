@@ -3,7 +3,7 @@
 
 Privacy friendly CMS, Blog and Portfolio made with Python & Django.
 
-**Important note**: Release of the first stable version is planned for end of July 2022.
+**Important note**: Release of the first stable version for production is planned on 10th August 2022.
 
 ![GitHub](https://img.shields.io/github/license/rob32/dev-case)
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
@@ -26,9 +26,9 @@ Privacy friendly CMS, Blog and Portfolio made with Python & Django.
 - Dynamic Pages (Footer)
 - Dark Django-Admin Theme
 - Favicon
-- Optimized for SEO
-- Sitemap (WIP)
-- Settings for S3 compatible-storage (optional WIP)
+- Optimized for good SEO
+- Dynamic sitemap.xml and robots.txt
+- Settings for S3 compatible-storage (optional)
 - Email Notification (optional WIP)
 - Comments (optional WIP)
 
@@ -44,6 +44,10 @@ Privacy friendly CMS, Blog and Portfolio made with Python & Django.
   - [Tests](#tests)
 - [Settings & Example .env](#settings--example-env)
 - [Deployment Notes](#deployment-notes)
+  - [S3 Storage](#s3-storage)
+  - [Admin Location](#admin-location)
+  - [Sitemap.xml](#sitemapxml)
+  - [Robots.txt](#robotstxt)
 - [Contribution](#contribution)
 - [Todo/Roadmap](#todoroadmap)
 - [Acknowledgements](#acknowledgements)
@@ -165,6 +169,8 @@ SECRET_KEY=insecure-secretkey12345
 DEBUG=FALSE
 ALLOWED_HOSTS=my-domain-name.com
 DATABASE_URL=psql://postgres:postgres@db:5432/postgres
+ADMIN_LOCATION=dev-case/
+ROBOTS_DISALLOW=/contact/,/private-file.html`
 
 FEED_TITLE="My Feed Title"
 FEED_DESCRIPTION="My feed description"
@@ -172,7 +178,7 @@ FEED_DESCRIPTION="My feed description"
 
 # Deployment Notes
 
-WIP
+**WIP**
 
 Example Security-Settings for production (via environment variables):
 
@@ -186,15 +192,49 @@ SESSION_COOKIE_SECURE=True
 CSRF_COOKIE_SECURE=True
 ```
 
+## S3 Storage
+
+Make sure that `USE_S3_STORAGE` is set to `True`.
+
+Possible settings for S3 compatible storage (via environment variables):
+
+```
+USE_S3_STORAGE
+AWS_ACCESS_KEY_ID
+AWS_SECRET_ACCESS_KEY
+AWS_STORAGE_BUCKET_NAME
+AWS_S3_REGION_NAME
+AWS_S3_ENDPOINT_URL
+AWS_S3_CUSTOM_DOMAIN
+AWS_LOCATION
+AWS_IS_GZIPPED (Boolean)
+AWS_S3_FILE_OVERWRITE (Boolean)
+AWS_DEFAULT_ACL
+```
+
+## Admin Location
+
+You can change the location for the admin area using the `ADMIN_LOCATION` environment variable. Default is `admin/`.
+
+## Sitemap.xml
+
+Change *DOMAIN NAME* and *DISPLAY NAME* via Admin-Panel (Sites App) to your actual domain name. Default is set to "example.com".
+
+## Robots.txt
+
+To add *Disallow* rules, use the `ROBOTS_DISALLOW` environment variable. For a valid Sitemap entry change your domain name as described in [Sitemap.xml](#sitemapxml).
+
+Example: `ROBOTS_DISALLOW=/contact/,/private-file.html`
+
 # Contribution
 
-Contributions, Feedback and Feature-Requests are always welcome.
+Contributions, Feedback and Feature-Requests are always welcome. To learn more, see the [Contributor Guide](https://github.com/rob32/dev-case/blob/main/CONTRIBUTING.md)
 
 # Todo/Roadmap
 
 - ~~CI for Tests & Code Quality~~
 - tweak default security & caching (settings)
-- tweak SEO
+- ~~tweak SEO~~
 - add/finish comments for Blog
 - add captchas
 - refactor views (queries)

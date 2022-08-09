@@ -1,6 +1,11 @@
 {% extends "base.html"%}
 {% load static %}
 {% block title%} - Home{% endblock title %}
+{% block meta %}
+{% if index_config.seo %}
+  <meta name="description" content="{{ index_config.seo }}">
+{% endif %}
+{% endblock meta %}
 
 {% block content %}
 

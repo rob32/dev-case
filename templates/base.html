@@ -6,6 +6,7 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  {% block meta %}{% endblock meta %}
   <title>{{ main_config.site_name }} {% block title%}{% endblock title %}</title>
   <link href="{% static 'css/style.css' %}" rel="stylesheet" />
   {% block styles %}{% endblock styles %}
@@ -35,7 +36,7 @@
   </header>
 
   <!-- MAIN BLOCK -->
-  <main>{% block content %}{% endblock content%}</main>
+  {% block content %}{% endblock content%}
 
   <!-- FOOTER -->
   <footer class="container">

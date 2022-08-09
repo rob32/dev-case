@@ -2,6 +2,11 @@
 {% load static %}
 {% load markdown_tags %}
 {% block title%} - {{ post.title }}{% endblock title %}
+{% block meta %}
+{% if post.seo %}
+  <meta name="description" content="{{ post.seo }}">
+{% endif %}
+{% endblock meta %}
 {% block styles %}
 <link href="{% static 'vendor/style-codehilite.css' %}" rel="stylesheet" />
 {% endblock styles %}

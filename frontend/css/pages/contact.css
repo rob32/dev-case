@@ -1,0 +1,10 @@
+.captcha-label {
+  float: left;
+  margin-top: 1rem;
+}
+
+.captcha {
+  padding-left: 0.7rem;
+  padding-bottom: 0.7rem;
+  padding-top: 0.3rem;
+}
