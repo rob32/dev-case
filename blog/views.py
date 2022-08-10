@@ -32,8 +32,9 @@ class BlogDetailView(DetailView):
         context["main_config"] = MainConfig.get_solo()
         context["pages"] = Page.objects.all()
         context["form"] = CommentCreationForm()
-        context["comments"] = Comment.objects.filter(post=self.get_object())
-
+        context["comments"] = Comment.objects.filter(
+            post=self.get_object(), public=True
+        )
         return context
 
     def post(self, *args, **kwargs):

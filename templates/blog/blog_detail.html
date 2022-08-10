@@ -2,11 +2,6 @@
 {% load static %}
 {% load markdown_tags %}
 {% block title%} - {{ post.title }}{% endblock title %}
-{% block meta %}
-{% if post.seo %}
-  <meta name="description" content="{{ post.seo }}">
-{% endif %}
-{% endblock meta %}
 {% block styles %}
 <link href="{% static 'vendor/style-codehilite.css' %}" rel="stylesheet" />
 {% endblock styles %}
@@ -52,18 +47,16 @@
     </div>
   </article>
 
-</main>
-
-<main>
-
-  <h2 class="main-headline text-center">comments</h2>
-  <div>
-    {% for comment in comments %}
-       <p> <h5>{{comment.author}} commented:</h5>{{comment.message}}</p>
-    {% endfor %}
-  </div>
+      <h2 class="main-headline text-center">comments</h2>
+     <div class="small-container margin-bottom ">
+      <div>
+        {% for comment in comments %}
+        <h5 class="lead no-margin-bottom">{{comment.author}}:</h5>
+        <p>{{comment.message}}</p>
+        {% endfor %}
+      </div>
+    </div>
   <div class="small-container margin-top flex">
-
     <form action="" method="POST">
       {% csrf_token %}
       {{form}}
