@@ -3,7 +3,6 @@
 
 Privacy friendly CMS, Blog and Portfolio made with Python & Django.
 
-**Important note**: Release of the first stable version for production is planned on 10th August 2022.
 
 ![GitHub](https://img.shields.io/github/license/rob32/dev-case)
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
@@ -20,7 +19,7 @@ Privacy friendly CMS, Blog and Portfolio made with Python & Django.
 - Social Media Links/Icons
 - About Me with Skills (optional with downloadable Resume)
 - Markdown Support with Syntaxhighlight and TOC
-- Contact-Form
+- Contact-Form (with captchas)
 - RSS
 - Search
 - Dynamic Pages (Footer)
@@ -30,7 +29,7 @@ Privacy friendly CMS, Blog and Portfolio made with Python & Django.
 - Dynamic sitemap.xml and robots.txt
 - Settings for S3 compatible-storage (optional)
 - Email Notification (optional WIP)
-- Comments (optional WIP)
+- Commenting System (with captchas)
 
 # Table of contents
 
@@ -63,15 +62,15 @@ About
 
 ![About Page - Example](README/screenshots/about-1.png?raw=true)
 
-Blogpost with Image
+Blogpost with Image (new version has comments-system)
 
 ![Post with Image - Example](README/screenshots/post-with-image-1.png?raw=true)
 
-Blogpost without Image
+Blogpost without Image (new version has comments-system)
 
 ![Post without Image - Example](README/screenshots/post-without-image-1.png?raw=true)
 
-Contact Page
+Contact Page (new version has captchas)
 
 ![Contact Page](README/screenshots/contact-1.png?raw=true)
 
@@ -233,10 +232,11 @@ Contributions, Feedback and Feature-Requests are always welcome. To learn more, 
 # Todo/Roadmap
 
 - ~~CI for Tests & Code Quality~~
-- tweak default security & caching (settings)
+- ~~tweak default security~~
 - ~~tweak SEO~~
-- add/finish comments for Blog
-- add captchas
+- ~~add/finish comments for Blog~~
+- ~~add captchas~~
+- add basic caching
 - refactor views (queries)
 - add docker-compose for production
 
@@ -248,6 +248,7 @@ A big thanks to the following great projects:
 - [django-debug-toolbar](https://github.com/jazzband/django-debug-toolbar)
 - [django-extensions](https://github.com/django-extensions/django-extensions)
 - [django-solo](https://github.com/lazybird/django-solo/)
+- [django-simple-captcha](https://github.com/mbi/django-simple-captcha)
 - [django-environ](https://github.com/joke2k/django-environ)
 - [Python-Markdown](https://github.com/Python-Markdown/markdown)
 - [pygments](https://github.com/pygments/pygments)
