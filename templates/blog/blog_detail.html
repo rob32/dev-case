@@ -52,5 +52,52 @@
     </div>
   </article>
 
+  <div class="small-container">
+    <h3 class="main-headline text-center">Comments</h3>
+    {% if not comments %}
+    <div class="flex flex-dir-col">
+      <p class="">There are no comments yet.</p>
+    </div>
+    {% else %}
+    {% for comment in comments %}
+    <p class="lead color-primary no-margin-bottom">{{comment.author}}</p>
+    <p class="no-margin-bottom"><small><time>{{comment.date|date:"SHORT_DATE_FORMAT"}}</time></small></p>
+    <p>{{comment.message}}</p>
+    {% endfor %}
+    {% endif %}
+    <div class="text-center">
+      <button class="btn-small no-margin" id="expandable-btn" onclick="main.toggleCommentForm()">Leave a comment</button>
+    </div>
+
+    <div class="margin-top flex">
+      <div id="expandable-div">
+        <form action="" method="POST">
+          {% csrf_token %}
+          <ul>
+            <li>
+              <label for="{{ form.author.id_for_label }}">Name</label>
+              {{ form.author }}
+            </li>
+            <li>
+              <label for="{{ form.message.id_for_label }}">Message</label>
+              {{ form.message }}
+            </li>
+            <li>
+              <label class="captcha-label" for="{{ form.captcha.id_for_label }}">Captcha</label>
+              {{ form.captcha }}
+            </li>
+            <li>
+              <button type="submit">Comment</button>
+            </li>
+          </ul>
+        </form>
+      </div>
+    </div>
+
+    {% if is_submitted %}
+    <p class="lead color-primary text-center">Thanks a lot.<br>Your comment will be published here as soon as possible.</p>
+    {% endif %}
+
+  </div>
 </main>
 {% endblock content %}

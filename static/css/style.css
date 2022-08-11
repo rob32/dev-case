@@ -182,14 +182,16 @@ textarea {
   border: 1px solid var(--primary-color);
   color: var(--font-color);
 }
-form button {
+form button,
+button {
   border: 0px;
   background-color: var(--secondary-color);
   color: var(--font-color);
   margin-top: 1rem;
   padding: 0.5rem 1rem;
 }
-form button:hover {
+form button:hover,
+button:hover {
   background-color: var(--secondary-color);
   color: var(--primary-color);
   font-weight: 700;
@@ -586,6 +588,9 @@ footer a:focus {
   align-items: center;
   height: 100%;
 }
+.flex-dir-col {
+  flex-direction: column;
+}
 .hidden {
   visibility: hidden;
   height: 0;
@@ -605,6 +610,9 @@ footer a:focus {
 .padding-bottom {
   padding-bottom: 2rem;
 }
+.no-margin {
+  margin: 0;
+}
 .no-margin-top {
   margin-top: 0;
 }
@@ -619,6 +627,12 @@ footer a:focus {
 }
 .color-font {
   color: var(--font-color) !important;
+}
+.color-primary {
+  color: var(--primary-color) !important;
+}
+#expandable-div {
+  display: none;
 }
 
 /* frontend/css/markdown.css */

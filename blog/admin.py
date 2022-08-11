@@ -21,7 +21,7 @@ class CommentAdmin(admin.ModelAdmin):
     list_display = ("author", "post", "message", "date", "public")
     list_filter = ("author", "public")
     search_fields = ("author", "post")
-    ordering = ("public", "author")
+    ordering = ("-date",)
     actions = ["activate_comments"]
 
     def activate_comments(self, request, queryset):

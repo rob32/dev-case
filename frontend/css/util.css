@@ -19,6 +19,10 @@
   height: 100%;
 }
 
+.flex-dir-col {
+  flex-direction: column;
+}
+
 .hidden {
   visibility: hidden;
   height: 0;
@@ -48,6 +52,10 @@
 
 /* Margin */
 
+.no-margin {
+  margin: 0;
+}
+
 .no-margin-top {
   margin-top: 0;
 }
@@ -68,4 +76,14 @@
 
 .color-font {
   color: var(--font-color) !important;
+}
+
+.color-primary {
+  color: var(--primary-color) !important;
+}
+
+/* JS Helper */
+
+#expandable-div {
+  display: none;
 }
