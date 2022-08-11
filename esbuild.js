@@ -1,4 +1,4 @@
-import esbuild from "esbuild";
+const esbuild = require("esbuild");
 
 const isDevServer = process.argv.includes("--dev");
 
@@ -7,6 +7,7 @@ esbuild
     entryPoints: ["frontend/css/style.css", "frontend/js/main.js"],
     outdir: "static",
     bundle: true,
+    globalName: "main",
     minify: !isDevServer,
     watch: isDevServer && {
       onRebuild(error, result) {

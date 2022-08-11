@@ -1,9 +1,8 @@
 {
-  "name": "d-c",
+  "name": "dev-case",
   "version": "1.0.0",
-  "description": "CSS/JS bundling for Django",
-  "main": "esbuild.js",
-  "type": "module",
+  "description": "Frontend bundling for DevCase",
+  "main": "static/js/main.js",
   "scripts": {
     "clean": "rm -rf static/css/style.css && rm -rf static/js/main.js",
     "build": "npm run clean && node esbuild.js",
@@ -12,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "box-8711@git.hidrive.strato.com:/users/box-8711/Repos/django/d-c.git"
+    "url": "https://github.com/rob32/dev-case"
   },
   "author": "Robert Burkhardt",
   "license": "GNU GPLv3",
