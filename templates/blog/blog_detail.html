@@ -10,10 +10,8 @@
 {% block styles %}
 <link href="{% static 'vendor/style-codehilite.css' %}" rel="stylesheet" />
 {% endblock styles %}
-
 {% block content %}
 <main>
-
   {% if post.image %}
   <div class="container margin-top">
     <div class="flex">
@@ -41,17 +39,17 @@
     </div>
   </div>
   {% endif %}
-
   <article class="small-container">
     <h1 class="title margin-top">{{ post.title }}</h1>
     <div class="text-card">
       <p class="text-card__date"><time>{{ post.created|date:"SHORT_DATE_FORMAT" }}</time></p>
+      <!-- Markdown Content -->
       <div class="md-content">
         <p class="text-card__text">{{ post.content | markdown | safe }}</p>
       </div>
     </div>
   </article>
-
+  <!-- Comments -->
   <div class="small-container">
     <h3 class="main-headline text-center">Comments</h3>
     {% if not comments %}
@@ -68,7 +66,7 @@
     <div class="text-center">
       <button class="btn-small no-margin" id="expandable-btn" onclick="main.toggleCommentForm()">Leave a comment</button>
     </div>
-
+    <!-- Comments-Form -->
     <div class="margin-top flex">
       <div id="expandable-div">
         <form action="" method="POST">
@@ -93,11 +91,9 @@
         </form>
       </div>
     </div>
-
     {% if is_submitted %}
     <p class="lead color-primary text-center">Thanks a lot.<br>Your comment will be published here as soon as possible.</p>
     {% endif %}
-
   </div>
 </main>
 {% endblock content %}

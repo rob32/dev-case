@@ -1,11 +1,8 @@
 {% extends "base.html"%}
 {% load static %}
 {% block title%} - Projects{% endblock title %}
-
 {% block content %}
-
 <section class="small-container margin-top">
-
   <h1 class="main-headline text-center margin-bottom">Projects</h1>
   {% for project in projects %}
   <div class="project-card">
@@ -21,7 +18,5 @@
     </div>
   </div>
   {% endfor %}
-
 </section>
-
 {% endblock content %}

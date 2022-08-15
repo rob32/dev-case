@@ -7,14 +7,10 @@
   <meta name="description" content="{{ about_config.seo }}">
 {% endif %}
 {% endblock meta %}
-
 {% block content %}
-
-{% comment %} TODO: include only used SVG's {% endcomment %}
-{% include "icons.html" %}
-
+{% include "icons.html" %} {% comment %} TODO: include only used SVG's {% endcomment %}
 <main>
-
+  <!-- Hero -->
   <section class="small-container about-hero margin-top">
     <h1 class="main-headline text-center">About Me</h1>
     <div class="profile-wrapper">
@@ -24,9 +20,11 @@
       </div>
       {% endif %}
     </div>
+    {% spaceless %}
     <div class="padding-top flex">
       {% include '_social_accounts.html' %}
     </div>
+    {% endspaceless %}
   </section>
 
   <div class="small-container margin-top">
@@ -60,7 +58,6 @@
       </ul>
     </div>
   </section>
-  <!-- /Skills -->
 
   <hr class="long-line" />
 
@@ -73,31 +70,14 @@
   </a>
   {% endif %}
 
+  <!-- Markdown Content -->
   <section class="small-container">
     <div class="text-card">
       <div class="md-content">
         <p class="text-card__text">{{ about_config.markdown_content | markdown | safe }}</p>
       </div>
     </div>
-
-    {% comment %}
-    <hr class="short-line" />
-
-    <h3>Education</h3>
-    <div class="text-card">
-      <p class="text-card__date">2019-2022</p>
-      <p class="text-card__text">
-        After my civilian service in Freiburg I moved to Berlin in 2010. Here I successfully completed my degree as
-        a "design and media technical assistant". Afterwards, 2019, I finally started to follow my dream: to become
-        certified as an IT specialist for application development. I successfully passed the written examination at
-        the end of 2021.
-      </p>
-    </div> {% endcomment %}
-
     <hr class="short-line" />
   </section>
-  <!-- /Wokrk-Education -->
 </main>
-
-
 {% endblock content %}

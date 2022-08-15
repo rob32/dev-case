@@ -15,7 +15,7 @@
 </head>
 
 <body>
-  <!-- NAVBAR -->
+  <!-- Navbar -->
   <header>
     <div class="navbar">
       <div class="container flex">
@@ -35,17 +35,18 @@
     </div>
   </header>
 
-  <!-- MAIN BLOCK -->
   {% block content %}{% endblock content%}
 
-  <!-- FOOTER -->
+  <!-- Footer -->
   <footer class="container">
     <ul>
+      {% spaceless %}
       {% if pages %}
       {% for page in pages %}
       <li><a href="{{ page.get_absolute_url }}">{{ page.title }}</a></li>
       {% endfor %}
       {% endif %}
+      {% endspaceless %}
       <li><a href="{% url 'feed' %}">RSS</a></li>
     </ul>
     <p class="text-center">

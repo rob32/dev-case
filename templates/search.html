@@ -1,15 +1,11 @@
 {% extends "base.html"%}
 {% load static %}
 {% block title%} - Search{% endblock title %}
-
 {% block content %}
-
 <section class="small-container margin-top">
   <h1 class="main-headline text-center">Search</h1>
 </section>
-
 <main>
-
   <div class="small-container margin-top flex">
     <form action="{% url 'search' %}" method="GET">
       <input class="input-search" type="text" name="q" minlength="3" maxlength="30" placeholder="Search term"
@@ -17,14 +13,12 @@
       <button class="btn-small" type="submit">Search</button>
     </form>
   </div>
-
   <div class="small-container margin-top">
     <h2 class="lead color-font">
       {% if request.GET.q %}
       Search Results for "<strong>{{ request.GET.q }}</strong>"
       {% endif %}
     </h2>
-
     {% for post in posts %}
     <p class="main-headline no-margin-bottom">
       <a class="link" href="{{ post.get_absolute_url }}">{{ post.title }}</a>
@@ -32,7 +26,5 @@
     <p>Date: <time>{{ post.created|date:"Y-m-d" }}</time></p>
     {% endfor %}
   </div>
-
 </main>
-
 {% endblock content %}

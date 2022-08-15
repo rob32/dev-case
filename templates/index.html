@@ -6,35 +6,28 @@
   <meta name="description" content="{{ index_config.seo }}">
 {% endif %}
 {% endblock meta %}
-
 {% block content %}
-
-{% comment %} TODO: include only used SVG's {% endcomment %}
-{% include "icons.html" %}
-
+{% include "icons.html" %} {% comment %} TODO: include only used SVG's {% endcomment %}
 <!-- Hero -->
 <section class="small-container margin-top">
   <h1 class="main-headline">{{ index_config.headline }}</h1>
   <p class="lead">
     {{ index_config.intro_text }}
   </p>
-
   <a class="link" href="{% url 'about' %}">
     <svg class="icon icon-arrow-right" aria-hidden="true" focusable="false">
       <use xlink:href="#icon-arrow-right"></use>
     </svg>
     About Me
   </a>
-
+  {% spaceless %}
   <div class="padding-top">
     {% include '_social_accounts.html' %}
   </div>
-
+  {% endspaceless %}
 </section>
-<!-- /Hero -->
 
 <main>
-
   <!-- Articles -->
   <section class="small-container">
     <h2 class="subtitle text-center">Recent Articles</h2>
@@ -58,7 +51,6 @@
       all Articles
     </a>
   </section>
-  <!-- /Articles -->
 
   <!-- Projects -->
   <section class="small-container">
@@ -80,8 +72,5 @@
       {% endfor %}
     </div>
   </section>
-  <!-- /Projects -->
 </main>
-
-
 {% endblock content %}

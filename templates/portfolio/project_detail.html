@@ -10,10 +10,8 @@
 {% block styles %}
 <link href="{% static 'vendor/style-codehilite.css' %}" rel="stylesheet" />
 {% endblock styles %}
-
 {% block content %}
 <main>
-
   <section class="container margin-top">
     <h1 class="main-headline text-center">{{ project.title }}</h1>
     <div class="flex">
@@ -43,11 +41,11 @@
     <h2 class="subtitle">{{ project.subtitle }}</h2>
     <div class="text-card">
       <p class="text-card__date"><time>{{ project.created|date:"SHORT_DATE_FORMAT" }}</time></p>
+      <!-- Markdown Content -->
       <div class="md-content">
         <p class="text-card__text">{{ project.content | markdown | safe }}</p>
       </div>
     </div>
   </section>
-
 </main>
 {% endblock content %}

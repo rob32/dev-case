@@ -8,19 +8,15 @@
 {% endif %}
 {% endblock meta %}
 {% block content %}
-
 <section class="small-container margin-top">
   <h1 class="main-headline text-center">{{ page.title }}</h1>
 </section>
-
 <main>
-
   <div class="small-container margin-top flex">
+    <!-- Markdown Content -->
     <div class="md-content">
       <p class="text-card__text">{{ page.content | markdown | safe }}</p>
     </div>
   </div>
-
 </main>
-
 {% endblock content %}

@@ -1,18 +1,13 @@
 {% extends "base.html"%}
 {% load static %}
 {% block title%} - Contact{% endblock title %}
-
 {% block content %}
 <main>
-
   <h2 class="main-headline text-center">Contact</h2>
-
   {% if is_submitted %}
   <p class="lead text-center margin-top">Thanks for your message. I will contact you as soon as possible.</p>
   {% endif %}
-
   <div class="small-container margin-top flex">
-
     <form action="" method="POST">
       {% csrf_token %}
       <ul>
@@ -37,8 +32,6 @@
         </li>
       </ul>
     </form>
-
   </div>
-
 </main>
 {% endblock content %}
