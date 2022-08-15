@@ -6,7 +6,7 @@
   <h1 class="main-headline text-center margin-bottom">Projects</h1>
   {% for project in projects %}
   <div class="project-card">
-    <img class="project-card__img" src="{{ project.image.url }}" alt="{{ project.title }}-image" />
+    <img class="project-card__img" src="{{ project.thumbnail.url }}" alt="{{ project.title }}-image" />
     <div class="project-card__content">
       <h2 class="project-card__header">
         <a class="link" href="{{ project.get_absolute_url }}">{{ project.title }}</a>
