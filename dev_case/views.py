@@ -2,7 +2,7 @@ from django.db.models import Q
 from django.shortcuts import render
 
 from blog.models import BlogPost
-from config.models import MainConfig, SocialAccountsConfig
+from config.models import SocialAccountsConfig
 from pages.models import AboutSiteConfig, IndexSiteConfig, Page
 from portfolio.models import Project
 
@@ -13,14 +13,12 @@ from .sitemaps import get_sitemap_absolute_url
 
 
 def home(request):
-    main_config = MainConfig.get_solo()
     index_config = IndexSiteConfig.get_solo()
     social_accounts = SocialAccountsConfig.get_solo()
     posts = BlogPost.objects.filter(status=1)[:3]
     projects = Project.objects.filter(status=1)
     pages = Page.objects.all()
     context = {
-        "main_config": main_config,
         "index_config": index_config,
         "social_accounts": social_accounts,
         "posts": posts,
@@ -31,12 +29,10 @@ def home(request):
 
 
 def about(request):
-    main_config = MainConfig.get_solo()
     about_config = AboutSiteConfig.get_solo()
     social_accounts = SocialAccountsConfig.get_solo()
     pages = Page.objects.all()
     context = {
-        "main_config": main_config,
         "about_config": about_config,
         "social_accounts": social_accounts,
         "pages": pages,
@@ -45,7 +41,6 @@ def about(request):
 
 
 def search(request):
-    main_config = MainConfig.get_solo()
     posts = BlogPost.objects.filter(status=1)
     pages = Page.objects.all()
 
@@ -57,7 +52,6 @@ def search(request):
             )
 
     context = {
-        "main_config": main_config,
         "posts": posts,
         "pages": pages,
     }

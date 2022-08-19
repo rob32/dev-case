@@ -1,6 +1,5 @@
 from django.shortcuts import render
 
-from config.models import MainConfig
 from pages.models import Page
 
 from .forms import ContactForm
@@ -8,7 +7,6 @@ from .models import Contact
 
 
 def contact(request):
-    main_config = MainConfig.get_solo()
     pages = Page.objects.all()
     is_submitted = False
 
@@ -33,7 +31,6 @@ def contact(request):
         form = ContactForm()
 
     context = {
-        "main_config": main_config,
         "form": form,
         "is_submitted": is_submitted,
         "pages": pages,
