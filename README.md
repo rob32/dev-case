@@ -30,6 +30,7 @@ Privacy friendly CMS, Blog and Portfolio made with Python & Django.
 - Settings for S3 compatible-storage (optional)
 - Email Notification (optional WIP)
 - Commenting System (with captchas)
+- Supports Umami Analytics (optional)
 
 # Table of contents
 
@@ -47,6 +48,7 @@ Privacy friendly CMS, Blog and Portfolio made with Python & Django.
   - [Admin Location](#admin-location)
   - [Sitemap.xml](#sitemapxml)
   - [Robots.txt](#robotstxt)
+  - [Umami Analytics](#umami-analytics)
 - [Contribution](#contribution)
 - [Todo/Roadmap](#todoroadmap)
 - [Acknowledgements](#acknowledgements)
@@ -173,6 +175,10 @@ ROBOTS_DISALLOW=/contact/,/private-file.html`
 
 FEED_TITLE="My Feed Title"
 FEED_DESCRIPTION="My feed description"
+
+USE_UMAMI_ANALYTICS=True
+UMAMI_SCRIPT_URL=https://your-umami-app.com/umami.js
+UMAMI_DATA_WEBSITE_ID=2323-3232-2323-3232
 ```
 
 # Deployment Notes
@@ -224,6 +230,20 @@ Change *DOMAIN NAME* and *DISPLAY NAME* via Admin-Panel (Sites App) to your actu
 To add *Disallow* rules, use the `ROBOTS_DISALLOW` environment variable. For a valid Sitemap entry change your domain name as described in [Sitemap.xml](#sitemapxml).
 
 Example: `ROBOTS_DISALLOW=/contact/,/private-file.html`
+
+## Umami Analytics
+
+Make sure that the `USE_UMAMI_ANALYTICS` environment variable is set to `True`.
+
+Additionally create a `UMAMI_SCRIPT_URL` and `UMAMI_DATA_WEBSITE_ID` environment variable with the corresponding values.
+
+Example:
+
+```
+USE_UMAMI_ANALYTICS=True
+UMAMI_SCRIPT_URL=https://your-umami-app.com/umami.js
+UMAMI_DATA_WEBSITE_ID=2323-3232-2323-3232
+```
 
 # Contribution
 

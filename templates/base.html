@@ -11,6 +11,9 @@
   <link href="{% static 'css/style.css' %}" rel="stylesheet" />
   {% block styles %}{% endblock styles %}
   <script src="{% static 'js/main.js'%}"></script>
+  {% if use_umami %}
+  <script async defer data-website-id="{{ umami_id }}" src="{{ umami_url }}"></script>
+  {% endif %}
   <link rel="icon" href="media/{{ main_config.favicon }}" type="image/png" />
 </head>
 

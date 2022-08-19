@@ -50,6 +50,9 @@ AWS_IS_GZIPPED = env.bool("AWS_IS_GZIPPED", default=False)
 AWS_S3_FILE_OVERWRITE = env.bool("AWS_S3_FILE_OVERWRITE", default=True)
 AWS_DEFAULT_ACL = env.str("AWS_DEFAULT_ACL", default="public-read")
 
+USE_UMAMI_ANALYTICS = env.bool("USE_UMAMI_ANALYTICS", default=False)
+UMAMI_SCRIPT_URL = env.str("UMAMI_SCRIPT_URL", default="")
+UMAMI_DATA_WEBSITE_ID = env.str("UMAMI_DATA_WEBSITE_ID", default="")
 
 INSTALLED_APPS = [
     "django.contrib.admin",
@@ -105,6 +108,13 @@ TEMPLATES = [
         },
     },
 ]
+
+# Append context_processors
+if USE_UMAMI_ANALYTICS:
+    TEMPLATES[0]["OPTIONS"]["context_processors"].append(
+        "dev_case.context_processors.umami_analytics"
+    )
+
 
 WSGI_APPLICATION = "dev_case.wsgi.application"
 
