@@ -102,6 +102,7 @@ TEMPLATES = [
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
                 "config.context_processors.main_settings",
+                "pages.context_processors.pages_footer",
             ],
             "libraries": {
                 "markdown_tags": "dev_case.templatetags.markdown_tags",

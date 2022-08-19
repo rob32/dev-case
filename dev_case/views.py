@@ -3,7 +3,7 @@ from django.shortcuts import render
 
 from blog.models import BlogPost
 from config.models import SocialAccountsConfig
-from pages.models import AboutSiteConfig, IndexSiteConfig, Page
+from pages.models import AboutSiteConfig, IndexSiteConfig
 from portfolio.models import Project
 
 from .settings import ROBOTS_DISALLOW
@@ -17,13 +17,11 @@ def home(request):
     social_accounts = SocialAccountsConfig.get_solo()
     posts = BlogPost.objects.filter(status=1)[:3]
     projects = Project.objects.filter(status=1)
-    pages = Page.objects.all()
     context = {
         "index_config": index_config,
         "social_accounts": social_accounts,
         "posts": posts,
         "projects": projects,
-        "pages": pages,
     }
     return render(request, "index.html", context=context)
 
@@ -31,18 +29,15 @@ def home(request):
 def about(request):
     about_config = AboutSiteConfig.get_solo()
     social_accounts = SocialAccountsConfig.get_solo()
-    pages = Page.objects.all()
     context = {
         "about_config": about_config,
         "social_accounts": social_accounts,
-        "pages": pages,
     }
     return render(request, "about.html", context=context)
 
 
 def search(request):
     posts = BlogPost.objects.filter(status=1)
-    pages = Page.objects.all()
 
     if request.method == "GET":
         query = request.GET.get("q")
@@ -53,7 +48,6 @@ def search(request):
 
     context = {
         "posts": posts,
-        "pages": pages,
     }
 
     return render(request, "search.html", context=context)

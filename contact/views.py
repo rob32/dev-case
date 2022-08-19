@@ -1,13 +1,10 @@
 from django.shortcuts import render
 
-from pages.models import Page
-
 from .forms import ContactForm
 from .models import Contact
 
 
 def contact(request):
-    pages = Page.objects.all()
     is_submitted = False
 
     if request.method == "POST":
@@ -33,7 +30,6 @@ def contact(request):
     context = {
         "form": form,
         "is_submitted": is_submitted,
-        "pages": pages,
     }
 
     return render(request, "contact.html", context=context)
