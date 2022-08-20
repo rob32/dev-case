@@ -98,9 +98,9 @@ docker-compose exec web python manage.py migrate
 docker-compose exec web python manage.py createsuperuser
 ```
 
-Important:
+**Important**:
 
-create a new .env file with the following content:
+Create a new .env file with the following content (before `docker-compose up -d --build`):
 
 ```
 DEBUG=True
@@ -256,8 +256,8 @@ Contributions, Feedback and Feature-Requests are always welcome. To learn more, 
 - ~~tweak SEO~~
 - ~~add/finish comments for Blog~~
 - ~~add captchas~~
+- ~~refactor views (queries)~~
 - add basic caching
-- refactor views (queries)
 - add docker-compose for production
 
 # Acknowledgements
