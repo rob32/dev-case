@@ -24,7 +24,7 @@
         <div>
           <h2 class="details-item">Author</h2>
           <ul class="details-item__list">
-            <li>{{ post.author|title }}</li>
+            <li>{{ post.author.get_full_name|default:"Add First-Name and Surname to your Profile" }}</li>
           </ul>
         </div>
         <div>
