@@ -35,19 +35,16 @@ def about(request):
 
 
 def search(request):
-    posts = BlogPost.objects.filter(status=1)
-
+    posts = {}
     if request.method == "GET":
         query = request.GET.get("q")
         if query:
             posts = BlogPost.objects.filter(
                 Q(title__icontains=query) | Q(category__name__icontains=query)
             )
-
     context = {
         "posts": posts,
     }
-
     return render(request, "search.html", context=context)
 
 
