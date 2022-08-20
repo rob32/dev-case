@@ -1,12 +1,12 @@
-from django.shortcuts import get_object_or_404, render
+from django.http import Http404
+from django.shortcuts import render
 
 from .forms import CommentForm
 from .models import BlogPost, Comment
 
 
 def blog_list(request):
-    # posts = get_list_or_404(BlogPost, status=1)
-    posts = BlogPost.objects.filter(status=1)
+    posts = BlogPost.objects.prefetch_related("category").filter(status=1)
     context = {
         "posts": posts,
     }
@@ -14,7 +14,10 @@ def blog_list(request):
 
 
 def blog_detail(request, slug):
-    post = get_object_or_404(BlogPost, slug=slug, status=1)
+    try:
+        post = BlogPost.objects.select_related("author").get(slug=slug)
+    except BlogPost.DoesNotExist:
+        raise Http404()
     comments = post.comments.filter(public=True)
     form = CommentForm()
     is_submitted = False

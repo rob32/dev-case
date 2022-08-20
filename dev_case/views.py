@@ -9,13 +9,11 @@ from portfolio.models import Project
 from .settings import ROBOTS_DISALLOW
 from .sitemaps import get_sitemap_absolute_url
 
-# TODO: refactor and tweak queries
-
 
 def home(request):
     index_config = IndexSiteConfig.get_solo()
     social_accounts = SocialAccountsConfig.get_solo()
-    posts = BlogPost.objects.filter(status=1)[:3]
+    posts = BlogPost.objects.prefetch_related("category").filter(status=1)[:3]
     projects = Project.objects.filter(status=1)
     context = {
         "index_config": index_config,
