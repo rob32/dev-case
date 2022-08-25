@@ -14,7 +14,9 @@
   {% if use_umami %}
   <script async defer data-website-id="{{ umami_id }}" src="{{ umami_url }}"></script>
   {% endif %}
-  <link rel="icon" href="media/{{ main_config.favicon }}" type="image/png" />
+  {% if main_config.favicon %}
+  <link rel="icon" href="{{ main_config.favicon.url}}" type="image/png" />
+  {% endif %}
 </head>
 
 <body>
