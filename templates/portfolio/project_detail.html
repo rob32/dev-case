@@ -3,12 +3,18 @@
 {% load markdown_tags %}
 {% block title%} - {{ project.title }}{% endblock title %}
 {% block meta %}
+<meta property=og:title content="{{ project.title }}">
 {% if project.seo %}
   <meta name="description" content="{{ project.seo }}">
+  <meta property=og:description name=description content="{{ project.seo }}">
+{% endif %}
+{% if project.image %}
+  <meta name=twitter:card content="summary_large_image">
+  <meta property="og:image" content="{{ project.image.url }}">
 {% endif %}
 {% endblock meta %}
 {% block styles %}
-<link href="{% static 'vendor/style-codehilite.css' %}" rel="stylesheet" />
+  <link href="{% static 'vendor/style-codehilite.css' %}" rel="stylesheet" />
 {% endblock styles %}
 {% block content %}
 <main>
