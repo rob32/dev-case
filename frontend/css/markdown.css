@@ -25,3 +25,7 @@
 .toc {
   margin-top: 1rem;
 }
+
+.md-content ul {
+  list-style-type: disc;
+}
