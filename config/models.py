@@ -54,7 +54,7 @@ class SocialAccountsConfig(SingletonModel):
         blank=True,
         null=True,
     )
-    isntagramm = models.CharField(
+    instagram = models.CharField(
         max_length=255,
         default="",
         blank=True,
@@ -66,13 +66,7 @@ class SocialAccountsConfig(SingletonModel):
         blank=True,
         null=True,
     )
-    linkedin = models.CharField(
-        max_length=255,
-        default="",
-        blank=True,
-        null=True,
-    )
-    mastadon = models.CharField(
+    mastodon = models.CharField(
         max_length=255,
         default="",
         blank=True,
@@ -91,6 +85,12 @@ class SocialAccountsConfig(SingletonModel):
         null=True,
     )
     youtube = models.CharField(
+        max_length=255,
+        default="",
+        blank=True,
+        null=True,
+    )
+    rss = models.CharField(
         max_length=255,
         default="",
         blank=True,
