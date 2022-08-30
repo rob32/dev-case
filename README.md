@@ -1,36 +1,38 @@
 
 ![alt text](README/logo-final.png?raw=true)
 
-Privacy friendly CMS, Blog and Portfolio made with Python & Django.
-
+A privacy friendly and secure CMS made with Python & Django.
 
 ![GitHub](https://img.shields.io/github/license/rob32/dev-case)
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
 ![Test-Lint Action](https://github.com/rob32/dev-case/actions/workflows/test-lint.yml/badge.svg)
 
+DevCase was designed for developers and IT professionals. It is a tool to help you get your own blog and portfolio online quickly and easily.
+
 ---
 
 # Features
 
-- Responsive and uniqe Design
+- Responsive and uniqe design
 - Configuration via Django-Admin
 - Blog
-- Portfolio & Project Showcase
+- Portfolio & Project-Showcase
 - Social Media Links/Icons
-- About Me with Skills (optional with downloadable Resume)
-- Markdown Support with Syntaxhighlight and TOC
+- About-Me with Skills (optional with downloadable Resume)
+- Markdown support with Syntaxhighlight and TOC
 - Contact-Form (with captchas)
 - RSS
 - Search
 - Dynamic Pages (Footer)
 - Dark Django-Admin Theme
-- Favicon
+- Settings for Favicon
 - Optimized for good SEO
 - Dynamic sitemap.xml and robots.txt
 - Settings for S3 compatible-storage (optional)
-- Email Notification (optional WIP)
 - Commenting System (with captchas)
 - Supports Umami Analytics (optional)
+
+**Demo/Example:** [rburkhardt.com](https://rburkhardt.com/)
 
 # Table of contents
 
@@ -185,6 +187,8 @@ UMAMI_DATA_WEBSITE_ID=2323-3232-2323-3232
 
 **WIP**
 
+ I recommend DigitalOcean’s App Platform and Render with DO’s Spaces or AWS S3 for media and staitc files.
+
 Example Security-Settings for production (via environment variables):
 
 ```
@@ -204,7 +208,7 @@ Make sure that `USE_S3_STORAGE` is set to `True`.
 Possible settings for S3 compatible storage (via environment variables):
 
 ```
-USE_S3_STORAGE
+USE_S3_STORAGE (default=False)
 AWS_ACCESS_KEY_ID
 AWS_SECRET_ACCESS_KEY
 AWS_STORAGE_BUCKET_NAME
@@ -212,9 +216,9 @@ AWS_S3_REGION_NAME
 AWS_S3_ENDPOINT_URL
 AWS_S3_CUSTOM_DOMAIN
 AWS_LOCATION
-AWS_IS_GZIPPED (Boolean)
-AWS_S3_FILE_OVERWRITE (Boolean)
-AWS_DEFAULT_ACL
+AWS_IS_GZIPPED (default=False)
+AWS_S3_FILE_OVERWRITE (default=True)
+AWS_DEFAULT_ACL (default=public-read)
 ```
 
 ## Admin Location
@@ -257,7 +261,6 @@ Contributions, Feedback and Feature-Requests are always welcome. To learn more, 
 - ~~add/finish comments for Blog~~
 - ~~add captchas~~
 - ~~refactor views (queries)~~
-- add basic caching
 - add docker-compose for production
 
 # Acknowledgements
@@ -281,3 +284,5 @@ The project is available under [GNU GPLv3](https://github.com/rob32/dev-case/blo
 ---
 
 If you like the project, please give it a star ⭐
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/X8X8EPTCI)
