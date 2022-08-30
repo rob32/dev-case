@@ -2,8 +2,11 @@
 {% load static %}
 {% block title%} - Home{% endblock title %}
 {% block meta %}
+  <meta property=og:title content="{{ main_config.site_name }}">
+  <meta name=twitter:card content="summary">
 {% if index_config.seo %}
   <meta name="description" content="{{ index_config.seo }}">
+  <meta property=og:description name=description content="{{ index_config.seo }}">
 {% endif %}
 {% endblock meta %}
 {% block content %}
