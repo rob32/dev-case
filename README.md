@@ -50,6 +50,7 @@ DevCase was designed for developers and IT professionals. It is a tool to help y
   - [Admin Location](#admin-location)
   - [Sitemap.xml](#sitemapxml)
   - [Robots.txt](#robotstxt)
+  - [Email & Notification](#email--notification)
   - [Umami Analytics](#umami-analytics)
 - [Contribution](#contribution)
 - [Todo/Roadmap](#todoroadmap)
@@ -234,6 +235,28 @@ Change *DOMAIN NAME* and *DISPLAY NAME* via Admin-Panel (Sites App) to your actu
 To add *Disallow* rules, use the `ROBOTS_DISALLOW` environment variable. For a valid Sitemap entry change your domain name as described in [Sitemap.xml](#sitemapxml).
 
 Example: `ROBOTS_DISALLOW=/contact/,/private-file.html`
+
+## Email & Notification
+
+To receive notifications you can configure the following settings via environment variables:
+
+```
+USE_EMAIL_SMTP (default=False)
+EMAIL_NOTIFICATION (default=False)
+EMAIL_RECIPIENT (receiver address)
+
+EMAIL_HOST
+EMAIL_HOST_USER
+EMAIL_HOST_PASSWORD
+EMAIL_USE_TLS (default=True)
+EMAIL_USE_SSL (default=False)
+EMAIL_PORT
+DEFAULT_FROM_EMAIL
+```
+
+Make sure that `USE_EMAIL_SMTP` and `EMAIL_NOTIFICATION` is set to `True`.
+
+This will notify you when there are new comments or when you receive a message via the contact page.
 
 ## Umami Analytics
 

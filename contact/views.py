@@ -1,4 +1,7 @@
+from django.core.mail import send_mail
 from django.shortcuts import render
+
+from dev_case.settings import EMAIL_NOTIFICATION, EMAIL_RECIPIENT, USE_EMAIL_SMTP
 
 from .forms import ContactForm
 from .models import Contact
@@ -14,6 +17,16 @@ def contact(request):
             user_name = form.cleaned_data["user_name"]
             user_message = form.cleaned_data["user_message"]
             user_email = form.cleaned_data["user_email"]
+
+            if USE_EMAIL_SMTP and EMAIL_NOTIFICATION:
+                try:
+                    send_mail(
+                        subject=" DevCase: new message via contact-form",
+                        message=f"You have a new message from {user_name} - {user_email}",
+                        recipient_list=[EMAIL_RECIPIENT],
+                    )
+                except Exception:
+                    pass
 
             new_contact = Contact(
                 name=user_name,

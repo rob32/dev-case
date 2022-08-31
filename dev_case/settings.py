@@ -221,3 +221,19 @@ CAPTCHA_FONT_SIZE = 33
 CAPTCHA_LETTER_ROTATION = (-15, 15)
 CAPTCHA_NOISE_FUNCTIONS = ["captcha.helpers.noise_dots"]
 CAPTCHA_LENGTH = 3
+
+# Email Backend
+
+USE_EMAIL_SMTP = env.bool("USE_EMAIL_SMTP", default=False)
+EMAIL_NOTIFICATION = env.bool("EMAIL_NOTIFICATION", default=False)
+EMAIL_RECIPIENT = env.str("EMAIL_RECIPIENT", default="")
+
+if USE_EMAIL_SMTP:
+    EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+    EMAIL_HOST = env.str("EMAIL_HOST", default="")
+    EMAIL_HOST_USER = env.str("EMAIL_HOST_USER", default="")
+    EMAIL_HOST_PASSWORD = env.str("EMAIL_HOST_PASSWORD", default="")
+    EMAIL_USE_TLS = env.bool("EMAIL_USE_TLS", default=True)
+    EMAIL_USE_SSL = env.bool("EMAIL_USE_SSL", default=False)
+    EMAIL_PORT = env.str("EMAIL_PORT", default="")
+    DEFAULT_FROM_EMAIL = env.str("DEFAULT_FROM_EMAIL", default="")
