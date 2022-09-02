@@ -31,11 +31,11 @@ DevCase was designed for developers and IT professionals. It is a tool to help y
 - Settings for S3 compatible-storage (optional)
 - Commenting System (with captchas)
 - Email notification (optional)
-- Supports Umami Analytics (optional)
+- Supports Umami-Analytics (optional)
 
 **Demo/Example:** [rburkhardt.com](https://rburkhardt.com/)
 
-[![Deploy to DO](https://www.deploytodo.com/do-btn-blue.svg)](https://cloud.digitalocean.com/apps/new?repo=https://github.com/rob32/dev-case/tree/feature-app-platform)
+[![Deploy to DO](https://www.deploytodo.com/do-btn-blue.svg)](https://cloud.digitalocean.com/apps/new?repo=https://github.com/rob32/dev-case/tree/prod-app-platform)
 
 # Table of contents
 
@@ -72,11 +72,11 @@ About
 
 ![About Page - Example](README/screenshots/about-1.png?raw=true)
 
-Blogpost with Image (new version has comments-system)
+Blogpost with image (new version has comments-system)
 
 ![Post with Image - Example](README/screenshots/post-with-image-1.png?raw=true)
 
-Blogpost without Image (new version has comments-system)
+Blogpost without image (new version has comments-system)
 
 ![Post without Image - Example](README/screenshots/post-without-image-1.png?raw=true)
 
@@ -193,18 +193,36 @@ UMAMI_DATA_WEBSITE_ID=2323-3232-2323-3232
 
 **WIP**
 
- I recommend DigitalOcean’s App Platform and Render with DO’s Spaces or AWS S3 for media and staitc files.
-
 For deployment/production there are two branches at the moment:
 
  - DO’s App Platform: [prod-app-platform](https://github.com/rob32/dev-case/tree/prod-app-platform)
- - Docker: WIP
+ - Traditional (VPS, Nginx etc.): [main](https://github.com/rob32/dev-case/tree/main)
+ - Docker-Compose: WIP
 
  ## DigitalOcean App Platform
 
- For DO’s App Platform you can use the "Deploy to DigitalOcean" button below. Please make sure you have a working S3 space/bucket with the required credentials. Guide: [How To Create a DigitalOcean Space and API Key](https://www.digitalocean.com/community/tutorials/how-to-create-a-digitalocean-space-and-api-key)
+ For DigitalOcean’s App Platform you can use the "Deploy to DigitalOcean" button below. Please make sure you have a working S3 space/bucket with the required credentials. Guide: [How To Create a DigitalOcean Space and API Key](https://www.digitalocean.com/community/tutorials/how-to-create-a-digitalocean-space-and-api-key)
 
- [![Deploy to DO](https://www.deploytodo.com/do-btn-blue.svg)](https://cloud.digitalocean.com/apps/new?repo=https://github.com/rob32/dev-case/tree/feature-app-platform)
+ [![Deploy to DO](https://www.deploytodo.com/do-btn-blue.svg)](https://cloud.digitalocean.com/apps/new?repo=https://github.com/rob32/dev-case/tree/prod-app-platform)
+
+ **After the build process completes:**
+
+ Access your app’s console through the Console tab and run the following commands:
+
+- `python3 manage.py migrate` for the initial database migrations
+- `python3 manage.py createsuperuser` to create an administrative user
+
+As a last step, make the following adjustment in your Space setting:
+
+Your Space -> Settings -> CORS Configurations (Add):
+
+- Add your domain (with wildcard) in "Origin", examples:
+  - `*ondigitalocean.app`
+  - `*example.com`
+- Allow/Check:
+  - GET, HEAD
+
+This should solve the problem with the fonts (missing header, Access-Control-Allow-Origin)
 
 ## SSL / HSTS
 
