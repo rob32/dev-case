@@ -1,52 +1,23 @@
 
 ![alt text](README/logo-final.png?raw=true)
 
-A privacy-focused and secure CMS made with Python & Django.
+# DO Production Branch
+
+**This is the production branch for DigitalOcean’s App Platform.**
+
+Link to the main branch: [dev-case/main](https://github.com/rob32/dev-case/tree/main)
 
 ![GitHub](https://img.shields.io/github/license/rob32/dev-case)
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
 ![Test-Lint Action](https://github.com/rob32/dev-case/actions/workflows/test-lint.yml/badge.svg)
 
-DevCase was designed for developers and IT professionals. It is a tool to help you get your own blog and portfolio online quickly and easily.
-
----
-
-# Features
-
-- Responsive and uniqe design
-- Configuration via Django-Admin
-- Blog
-- Portfolio & Project-Showcase
-- Social Media Links/Icons
-- About-Me with Skills (optional with downloadable Resume)
-- Markdown support with Syntaxhighlight and TOC
-- Contact-Form (with captchas)
-- RSS
-- Search
-- Dynamic Pages (Footer)
-- Dark Django-Admin Theme
-- Settings for Favicon
-- Optimized for good SEO
-- Dynamic sitemap.xml and robots.txt
-- Settings for S3 compatible-storage (optional)
-- Commenting System (with captchas)
-- Email notification (optional)
-- Supports Umami-Analytics (optional)
-
-**Demo/Example:** [rburkhardt.com](https://rburkhardt.com/)
 
 [![Deploy to DO](https://www.deploytodo.com/do-btn-blue.svg)](https://cloud.digitalocean.com/apps/new?repo=https://github.com/rob32/dev-case/tree/prod-app-platform)
 
 # Table of contents
 
-- [Features](#features)
+- [DO Production Branch](#do-production-branch)
 - [Table of contents](#table-of-contents)
-- [Screenshots](#screenshots)
-- [Quick-Start (Docker)](#quick-start-docker)
-- [Local Development](#local-development)
-  - [Setup](#setup)
-  - [Frontend](#frontend)
-  - [Tests](#tests)
 - [Settings & Example .env](#settings--example-env)
 - [Deployment Notes](#deployment-notes)
   - [DigitalOcean App Platform](#digitalocean-app-platform)
@@ -58,116 +29,7 @@ DevCase was designed for developers and IT professionals. It is a tool to help y
   - [Email & Notification](#email--notification)
   - [Umami Analytics](#umami-analytics)
 - [Contribution](#contribution)
-- [Todo/Roadmap](#todoroadmap)
-- [Acknowledgements](#acknowledgements)
 - [License](#license)
-
-# Screenshots
-
-Home
-
-![alt text](README/screenshots/home-2.png?raw=true)
-
-About
-
-![About Page - Example](README/screenshots/about-1.png?raw=true)
-
-Blogpost with image (new version has comments-system)
-
-![Post with Image - Example](README/screenshots/post-with-image-1.png?raw=true)
-
-Blogpost without image (new version has comments-system)
-
-![Post without Image - Example](README/screenshots/post-without-image-1.png?raw=true)
-
-Contact Page (new version has captchas)
-
-![Contact Page](README/screenshots/contact-1.png?raw=true)
-
-Admin Dashboard
-
-![Admin Dashboard](README/screenshots/admin-1.png?raw=true)
-
-
-Admin - About Config
-
-![Admin Page - About Config](README/screenshots/admin-about-settings.png?raw=true)
-
-
-# Quick-Start (Docker)
-
-The fastest and easiest way to test dev-case **locally**:
-
-```
-git clone git@github.com:rob32/dev-case.git
-cd dev-case
-docker-compose up -d --build
-docker-compose exec web python manage.py migrate
-docker-compose exec web python manage.py createsuperuser
-```
-
-**Important**:
-
-Create a new .env file with the following content (before `docker-compose up -d --build`):
-
-```
-DEBUG=True
-DATABASE_URL=psql://postgres:postgres@db:5432/postgres
-```
-
-Go to  `http://127.0.0.1:8000/` and check if all worked.
-
-# Local Development
-
-Development environment with Python (venv) and Node (optional).
-
-## Setup
-
-Tested with GNU/Linux & Mac:
-
-```
-git clone git@github.com:rob32/dev-case.git
-cd dev-case
-python3 -m venv venv && source venv/bin/activate
-pip install -r requirements-dev.txt
-python3 manage.py migrate
-pre-commit install
-```
-
-create a .env file with at least the following content:
-
-```
-DEBUG=True
-# only if postgres is used, uncomend the next line (example):
-# DATABASE_URL=psql://postgres:postgres@db:5432/postgres
-```
-
-Start the Development-Server with `python3 manage.py runserver`
-
-Go to  `http://127.0.0.1:8000/`
-
-## Frontend
-
-```
-# Install dependecies with:
-npm install
-
-# Build "Fronted" manually (uses `rm -rf` for cleaning):
-npm run build
-```
-
-Optional: Start Backend-Server and Esbuild in watch-mode at the same time with `npm start`.
-
-
-## Tests
-
-```
-# Unit/Integration Tests:
-python3 manage.py test
-
-# Code Quality with the help of pre-commit
-pre-commit run -a -v
-```
 
 # Settings & Example .env
 
@@ -311,30 +173,6 @@ UMAMI_DATA_WEBSITE_ID=2323-3232-2323-3232
 # Contribution
 
 Contributions, Feedback and Feature-Requests are always welcome. To learn more, see the [Contributor Guide](https://github.com/rob32/dev-case/blob/main/CONTRIBUTING.md)
-
-# Todo/Roadmap
-
-- ~~CI for Tests & Code Quality~~
-- ~~tweak default security~~
-- ~~tweak SEO~~
-- ~~add/finish comments for Blog~~
-- ~~add captchas~~
-- ~~refactor views (queries)~~
-- add docker-compose for production
-
-# Acknowledgements
-
-A big thanks to the following great projects:
-
-- [django](https://github.com/django/django)
-- [django-debug-toolbar](https://github.com/jazzband/django-debug-toolbar)
-- [django-extensions](https://github.com/django-extensions/django-extensions)
-- [django-solo](https://github.com/lazybird/django-solo/)
-- [django-simple-captcha](https://github.com/mbi/django-simple-captcha)
-- [django-environ](https://github.com/joke2k/django-environ)
-- [Python-Markdown](https://github.com/Python-Markdown/markdown)
-- [pygments](https://github.com/pygments/pygments)
-- [esbuild](https://github.com/evanw/esbuild)
 
 # License
 
