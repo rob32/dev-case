@@ -3,13 +3,12 @@ spec:
   services:
     - name: django
       git:
-        branch: feature-app-platform
+        branch: prod-app-platform
         repo_clone_url: https://github.com/rob32/dev-case.git
       envs:
         - key: SECRET_KEY
           scope: RUN_AND_BUILD_TIME
-          type: SECRET
-          value: your-secret-key
+          value: your-secure-secret-key
         - key: ALLOWED_HOSTS
           scope: RUN_AND_BUILD_TIME
           value: ${APP_DOMAIN}
@@ -24,26 +23,25 @@ spec:
           value: "True"
         - key: AWS_ACCESS_KEY_ID
           scope: RUN_AND_BUILD_TIME
-          value: your-space-or-aws-access-key
+          value: your-space-access-key
         - key: AWS_SECRET_ACCESS_KEY
           scope: RUN_AND_BUILD_TIME
-          type: SECRET
-          value: your-space-or-aws-access-secret
+          value: your-space-access-secret
         - key: AWS_STORAGE_BUCKET_NAME
           scope: RUN_AND_BUILD_TIME
-          value: your-space-or-aws-bucket-name
+          value: your-space-bucket-name
         - key: AWS_LOCATION
           scope: RUN_AND_BUILD_TIME
-          value: your-space-or-aws-location/folder
+          value: your-space-folder/location-if-used
         - key: AWS_S3_ENDPOINT_URL
           scope: RUN_AND_BUILD_TIME
-          value: example-do-space==>https://fra1.digitaloceanspaces.com
+          value: example==>https://fra1.digitaloceanspaces.com
         - key: AWS_S3_REGION_NAME
           scope: RUN_AND_BUILD_TIME
-          value: example-do-space==>fra1
+          value: example==>fra1
         - key: AWS_S3_CUSTOM_DOMAIN
           scope: RUN_AND_BUILD_TIME
-          value: leave-blank-only-with-cdn:example==>cdn.example.com
+          value: leave-blank-or-if-used-with-cdn:example==>cdn.example.com
         - key: FEED_TITLE
           scope: RUN_AND_BUILD_TIME
           value: Your Feed Title
