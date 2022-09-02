@@ -1,0 +1,81 @@
+spec:
+  name: dev-case
+  services:
+    - name: django
+      git:
+        branch: feature-app-platform
+        repo_clone_url: https://github.com/rob32/dev-case.git
+      envs:
+        - key: SECRET_KEY
+          scope: RUN_AND_BUILD_TIME
+          type: SECRET
+          value: your-secret-key
+        - key: ALLOWED_HOSTS
+          scope: RUN_AND_BUILD_TIME
+          value: ${APP_DOMAIN}
+        - key: DEBUG
+          scope: RUN_AND_BUILD_TIME
+          value: "False"
+        - key: DATABASE_URL
+          scope: RUN_AND_BUILD_TIME
+          value: ${db.DATABASE_URL}
+        - key: USE_S3_STORAGE
+          scope: RUN_AND_BUILD_TIME
+          value: "True"
+        - key: AWS_ACCESS_KEY_ID
+          scope: RUN_AND_BUILD_TIME
+          value: your-space-or-aws-access-key
+        - key: AWS_SECRET_ACCESS_KEY
+          scope: RUN_AND_BUILD_TIME
+          type: SECRET
+          value: your-space-or-aws-access-secret
+        - key: AWS_STORAGE_BUCKET_NAME
+          scope: RUN_AND_BUILD_TIME
+          value: your-space-or-aws-bucket-name
+        - key: AWS_LOCATION
+          scope: RUN_AND_BUILD_TIME
+          value: your-space-or-aws-location/folder
+        - key: AWS_S3_ENDPOINT_URL
+          scope: RUN_AND_BUILD_TIME
+          value: example-do-space==>https://fra1.digitaloceanspaces.com
+        - key: AWS_S3_REGION_NAME
+          scope: RUN_AND_BUILD_TIME
+          value: example-do-space==>fra1
+        - key: AWS_S3_CUSTOM_DOMAIN
+          scope: RUN_AND_BUILD_TIME
+          value: leave-blank-only-with-cdn:example==>cdn.example.com
+        - key: FEED_TITLE
+          scope: RUN_AND_BUILD_TIME
+          value: Your Feed Title
+        - key: FEED_DESCRIPTION
+          scope: RUN_AND_BUILD_TIME
+          value: Your Feed Description
+        - key: ADMIN_LOCATION
+          scope: RUN_AND_BUILD_TIME
+          value: admin==>change-this-for-increased-security
+        - key: SECURE_SSL_REDIRECT
+          scope: RUN_AND_BUILD_TIME
+          value: "True"
+        - key: SECURE_HSTS_SECONDS
+          scope: RUN_AND_BUILD_TIME
+          value: "2592000"
+        - key: SECURE_HSTS_INCLUDE_SUBDOMAINS
+          scope: RUN_AND_BUILD_TIME
+          value: "True"
+        - key: SECURE_HSTS_PRELOAD
+          scope: RUN_AND_BUILD_TIME
+          value: "True"
+        - key: SESSION_COOKIE_SECURE
+          scope: RUN_AND_BUILD_TIME
+          value: "True"
+        - key: CSRF_COOKIE_SECURE
+          scope: RUN_AND_BUILD_TIME
+          value: "True"
+      http_port: 8080
+      routes:
+        - path: /
+      run_command: gunicorn dev_case.wsgi:application --bind 0.0.0.0:8080 --worker-tmp-dir /dev/shm
+      source_dir: /
+  databases:
+    - engine: PG
+      name: db
