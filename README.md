@@ -1,7 +1,7 @@
 
 ![alt text](README/logo-final.png?raw=true)
 
-A privacy friendly and secure CMS made with Python & Django.
+A privacy-focused and secure CMS made with Python & Django.
 
 ![GitHub](https://img.shields.io/github/license/rob32/dev-case)
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
@@ -30,9 +30,12 @@ DevCase was designed for developers and IT professionals. It is a tool to help y
 - Dynamic sitemap.xml and robots.txt
 - Settings for S3 compatible-storage (optional)
 - Commenting System (with captchas)
+- Email notification (optional)
 - Supports Umami Analytics (optional)
 
 **Demo/Example:** [rburkhardt.com](https://rburkhardt.com/)
+
+[![Deploy to DO](https://www.deploytodo.com/do-btn-blue.svg)](https://cloud.digitalocean.com/apps/new?repo=https://github.com/rob32/dev-case/tree/feature-app-platform)
 
 # Table of contents
 
@@ -46,6 +49,8 @@ DevCase was designed for developers and IT professionals. It is a tool to help y
   - [Tests](#tests)
 - [Settings & Example .env](#settings--example-env)
 - [Deployment Notes](#deployment-notes)
+  - [DigitalOcean App Platform](#digitalocean-app-platform)
+  - [SSL / HSTS](#ssl--hsts)
   - [S3 Storage](#s3-storage)
   - [Admin Location](#admin-location)
   - [Sitemap.xml](#sitemapxml)
@@ -91,7 +96,7 @@ Admin - About Config
 
 # Quick-Start (Docker)
 
-The fastest and easiest way to test dev-case:
+The fastest and easiest way to test dev-case **locally**:
 
 ```
 git clone git@github.com:rob32/dev-case.git
@@ -166,7 +171,7 @@ pre-commit run -a -v
 
 # Settings & Example .env
 
-Possible settings via environment variables:
+A selection of possible settings via environment variables:
 
 ```
 SECRET_KEY=insecure-secretkey12345
@@ -190,7 +195,20 @@ UMAMI_DATA_WEBSITE_ID=2323-3232-2323-3232
 
  I recommend DigitalOcean’s App Platform and Render with DO’s Spaces or AWS S3 for media and staitc files.
 
-Example Security-Settings for production (via environment variables):
+For deployment/production there are two branches at the moment:
+
+ - DO’s App Platform: [prod-app-platform](https://github.com/rob32/dev-case/tree/prod-app-platform)
+ - Docker: WIP
+
+ ## DigitalOcean App Platform
+
+ For DO’s App Platform you can use the "Deploy to DigitalOcean" button below. Please make sure you have a working S3 space/bucket with the required credentials. Guide: [How To Create a DigitalOcean Space and API Key](https://www.digitalocean.com/community/tutorials/how-to-create-a-digitalocean-space-and-api-key)
+
+ [![Deploy to DO](https://www.deploytodo.com/do-btn-blue.svg)](https://cloud.digitalocean.com/apps/new?repo=https://github.com/rob32/dev-case/tree/feature-app-platform)
+
+## SSL / HSTS
+
+Possible settings for production (via environment variables):
 
 ```
 SECURE_SSL_REDIRECT=True
