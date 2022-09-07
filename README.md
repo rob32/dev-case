@@ -344,4 +344,3 @@ The project is available under [GNU GPLv3](https://github.com/rob32/dev-case/blo
 
 If you like the project, please give it a star ⭐
 
-[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/X8X8EPTCI)
