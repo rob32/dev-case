@@ -1,0 +1,8 @@
+-r requirements.txt
+black
+isort
+flake8
+flake8-isort
+pre-commit
+django-debug-toolbar
+django-extensions

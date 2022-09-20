@@ -1,0 +1,11 @@
+django ~=4.1
+gunicorn
+django-solo
+Pillow
+django-environ
+markdown
+Pygments
+psycopg2-binary
+boto3
+django-storages
+django-simple-captcha

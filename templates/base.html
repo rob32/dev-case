@@ -14,6 +14,9 @@
   {% if use_umami %}
   <script async defer data-website-id="{{ umami_id }}" src="{{ umami_url }}"></script>
   {% endif %}
+  {% if use_plausible %}
+  <script async defer data-domain="{{ plausible_data_domain }}" src="{{ plausible_url }}"></script>
+  {% endif %}
   {% if main_config.favicon %}
   <link rel="icon" href="{{ main_config.favicon.url}}" type="image/png" />
   {% endif %}

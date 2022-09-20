@@ -11,6 +11,33 @@ Link to the main branch: [dev-case/main](https://github.com/rob32/dev-case/tree/
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
 ![Test-Lint Action](https://github.com/rob32/dev-case/actions/workflows/test-lint.yml/badge.svg)
 
+DevCase was designed for developers and IT professionals. It is a tool to help you get your own blog and portfolio online quickly and easily.
+
+---
+
+# Features
+
+- Responsive and uniqe design
+- Configuration via Django-Admin
+- Blog
+- Portfolio & Project-Showcase
+- Social Media Links/Icons
+- About-Me with Skills (optional with downloadable Resume)
+- Markdown support with Syntaxhighlight and TOC
+- Contact-Form (with captchas)
+- RSS
+- Search
+- Dynamic Pages (Footer)
+- Dark Django-Admin Theme
+- Settings for Favicon
+- Optimized for good SEO
+- Dynamic sitemap.xml and robots.txt
+- Settings for S3 compatible-storage (optional)
+- Commenting System (with captchas)
+- Email notification (optional)
+- Supports Umami, Plausible analytics (optional)
+
+**Demo/Example:** [rburkhardt.com](https://rburkhardt.com/)
 
 [![Deploy to DO](https://www.deploytodo.com/do-btn-blue.svg)](https://cloud.digitalocean.com/apps/new?repo=https://github.com/rob32/dev-case/tree/prod-app-platform)
 
@@ -28,6 +55,7 @@ Link to the main branch: [dev-case/main](https://github.com/rob32/dev-case/tree/
   - [Robots.txt](#robotstxt)
   - [Email & Notification](#email--notification)
   - [Umami Analytics](#umami-analytics)
+  - [Plausible Analytics](#plausible-analytics)
 - [Contribution](#contribution)
 - [License](#license)
 
@@ -170,9 +198,23 @@ UMAMI_SCRIPT_URL=https://your-umami-app.com/umami.js
 UMAMI_DATA_WEBSITE_ID=2323-3232-2323-3232
 ```
 
+## Plausible Analytics
+
+Make sure that the `USE_PLAUSIBLE_ANALYTICS` environment variable is set to `True`.
+
+Additionally create a `PLAUSIBLE_SCRIPT_URL` and `PLAUSIBLE_DATA_DOMAIN` environment variable with the corresponding values.
+
+Example:
+
+```
+USE_PLAUSIBLE_ANALYTICS=True
+PLAUSIBLE_SCRIPT_URL=https://plausible.io/js/script.js
+PLAUSIBLE_DATA_DOMAIN=example.com
+```
+
 # Contribution
 
-Contributions, Feedback and Feature-Requests are always welcome. To learn more, see the [Contributor Guide](https://github.com/rob32/dev-case/blob/main/CONTRIBUTING.md)
+Make sure that the `USE_PLAUSIBLE_ANALYTICS` environment variable is set to `True`.
 
 # License
 
@@ -182,4 +224,3 @@ The project is available under [GNU GPLv3](https://github.com/rob32/dev-case/blo
 
 If you like the project, please give it a star ⭐
 
-[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/X8X8EPTCI)
