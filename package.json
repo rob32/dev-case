@@ -16,7 +16,7 @@
   "author": "Robert Burkhardt",
   "license": "GNU GPLv3",
   "devDependencies": {
-    "concurrently": "^7.2.0",
-    "esbuild": "^0.14.39"
+    "concurrently": "^7.4.0",
+    "esbuild": "^0.15.8"
   }
 }
