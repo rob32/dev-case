@@ -1,6 +1,7 @@
 # Project Name: DevCase
 # Original Author: Robert Burkhardt
 # License: GNU GPLv3
+# Version: 1.1.0
 
 import os
 from pathlib import Path
