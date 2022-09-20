@@ -31,7 +31,7 @@ DevCase was designed for developers and IT professionals. It is a tool to help y
 - Settings for S3 compatible-storage (optional)
 - Commenting System (with captchas)
 - Email notification (optional)
-- Supports Umami-Analytics (optional)
+- Supports Umami, Plausible analytics (optional)
 
 **Demo/Example:** [rburkhardt.com](https://rburkhardt.com/)
 
@@ -57,6 +57,7 @@ DevCase was designed for developers and IT professionals. It is a tool to help y
   - [Robots.txt](#robotstxt)
   - [Email & Notification](#email--notification)
   - [Umami Analytics](#umami-analytics)
+  - [Plausible Analytics](#plausible-analytics)
 - [Contribution](#contribution)
 - [Todo/Roadmap](#todoroadmap)
 - [Acknowledgements](#acknowledgements)
@@ -306,6 +307,20 @@ Example:
 USE_UMAMI_ANALYTICS=True
 UMAMI_SCRIPT_URL=https://your-umami-app.com/umami.js
 UMAMI_DATA_WEBSITE_ID=2323-3232-2323-3232
+```
+
+## Plausible Analytics
+
+Make sure that the `USE_PLAUSIBLE_ANALYTICS` environment variable is set to `True`.
+
+Additionally create a `PLAUSIBLE_SCRIPT_URL` and `PLAUSIBLE_DATA_DOMAIN` environment variable with the corresponding values.
+
+Example:
+
+```
+USE_PLAUSIBLE_ANALYTICS=True
+PLAUSIBLE_SCRIPT_URL=https://plausible.io/js/script.js
+PLAUSIBLE_DATA_DOMAIN=example.com
 ```
 
 # Contribution

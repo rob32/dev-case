@@ -54,6 +54,10 @@ USE_UMAMI_ANALYTICS = env.bool("USE_UMAMI_ANALYTICS", default=False)
 UMAMI_SCRIPT_URL = env.str("UMAMI_SCRIPT_URL", default="")
 UMAMI_DATA_WEBSITE_ID = env.str("UMAMI_DATA_WEBSITE_ID", default="")
 
+USE_PLAUSIBLE_ANALYTICS = env.bool("USE_PLAUSIBLE_ANALYTICS", default=False)
+PLAUSIBLE_SCRIPT_URL = env.str("PLAUSIBLE_SCRIPT_URL", default="")
+PLAUSIBLE_DATA_DOMAIN = env.str("PLAUSIBLE_DATA_DOMAIN", default="")
+
 INSTALLED_APPS = [
     "django.contrib.admin",
     "django.contrib.auth",
@@ -112,9 +116,15 @@ TEMPLATES = [
 ]
 
 # Append context_processors
+
 if USE_UMAMI_ANALYTICS:
     TEMPLATES[0]["OPTIONS"]["context_processors"].append(
         "dev_case.context_processors.umami_analytics"
+    )
+
+if USE_PLAUSIBLE_ANALYTICS:
+    TEMPLATES[0]["OPTIONS"]["context_processors"].append(
+        "dev_case.context_processors.plausible_analytics"
     )
 
 
