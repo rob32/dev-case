@@ -44,6 +44,7 @@ DevCase was designed for developers and IT professionals. It is a tool to help y
 # Table of contents
 
 - [DO Production Branch](#do-production-branch)
+- [Features](#features)
 - [Table of contents](#table-of-contents)
 - [Settings & Example .env](#settings--example-env)
 - [Deployment Notes](#deployment-notes)
@@ -216,7 +217,7 @@ PLAUSIBLE_DATA_DOMAIN=example.com
 
 # Contribution
 
-Make sure that the `USE_PLAUSIBLE_ANALYTICS` environment variable is set to `True`.
+Contributions, Feedback and Feature-Requests are always welcome. To learn more, see the [Contributor Guide](https://github.com/rob32/dev-case/blob/main/CONTRIBUTING.md)
 
 # License
 
