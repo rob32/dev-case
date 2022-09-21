@@ -1,7 +1,7 @@
 # Project Name: DevCase
 # Original Author: Robert Burkhardt
 # License: GNU GPLv3
-# Version: 1.1.0
+# Version: 1.1.1
 
 import os
 from pathlib import Path
@@ -246,5 +246,5 @@ if USE_EMAIL_SMTP:
     EMAIL_HOST_PASSWORD = env.str("EMAIL_HOST_PASSWORD", default="")
     EMAIL_USE_TLS = env.bool("EMAIL_USE_TLS", default=True)
     EMAIL_USE_SSL = env.bool("EMAIL_USE_SSL", default=False)
-    EMAIL_PORT = env.str("EMAIL_PORT", default="")
+    EMAIL_PORT = env.int("EMAIL_PORT", default=587)
     DEFAULT_FROM_EMAIL = env.str("DEFAULT_FROM_EMAIL", default="")

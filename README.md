@@ -287,11 +287,13 @@ EMAIL_HOST_USER
 EMAIL_HOST_PASSWORD
 EMAIL_USE_TLS (default=True)
 EMAIL_USE_SSL (default=False)
-EMAIL_PORT
+EMAIL_PORT (default=587)
 DEFAULT_FROM_EMAIL
 ```
 
 Make sure that `USE_EMAIL_SMTP` and `EMAIL_NOTIFICATION` is set to `True`.
+
+The `DEFAULT_FROM_EMAIL` variable needs to have a valid value (example: admin@example.com).
 
 This will notify you when there are new comments or when you receive a message via the contact page.
 

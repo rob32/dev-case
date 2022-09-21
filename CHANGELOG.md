@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.1 (2022-09-21)
+
+- Fixed EMAIL_PORT in settings.py
+
 ## 1.1.0 (2022-09-20)
 
 - Added support for plausible-analytics
