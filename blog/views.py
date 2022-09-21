@@ -2,7 +2,7 @@ from django.core.mail import send_mail
 from django.http import Http404
 from django.shortcuts import render
 
-from dev_case.settings import EMAIL_NOTIFICATION, EMAIL_RECIPIENT, USE_EMAIL_SMTP
+from dev_case import settings
 
 from .forms import CommentForm
 from .models import BlogPost, Comment
@@ -32,15 +32,14 @@ def blog_detail(request, slug):
             author = form.cleaned_data["author"]
             message = form.cleaned_data["message"]
 
-            if USE_EMAIL_SMTP and EMAIL_NOTIFICATION:
-                try:
-                    send_mail(
-                        subject=" DevCase: comment received",
-                        message=f"You have a new comment from {author}",
-                        recipient_list=[EMAIL_RECIPIENT],
-                    )
-                except Exception:
-                    pass
+            if settings.EMAIL_NOTIFICATION:
+                send_mail(
+                    "DevCase: blog comment received",
+                    f"Message:{message} | Author: {author}",
+                    settings.DEFAULT_FROM_EMAIL,
+                    [settings.EMAIL_RECIPIENT],
+                    fail_silently=False,
+                )
 
             new_message = Comment(
                 post=post,

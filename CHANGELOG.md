@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.2 (2022-09-21)
+
+- Fixed email notification (contact-form and comments)
+
 ## 1.1.1 (2022-09-21)
 
 - Fixed EMAIL_PORT in settings.py
