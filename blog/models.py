@@ -49,6 +49,7 @@ class BlogPost(models.Model):
     image = models.ImageField(
         upload_to="blog-posts/",
         verbose_name="Image",
+        help_text="Recommended resolution: 1040px * 585px",
         blank=True,
         null=True,
     )

@@ -61,7 +61,7 @@ class Project(models.Model):
     image = models.ImageField(
         upload_to="projects/",
         verbose_name="Image",
-        help_text="Recommended resolution: 800px * 450px",
+        help_text="Recommended resolution: 1040px * 585px",
         blank=False,
         null=True,
     )
