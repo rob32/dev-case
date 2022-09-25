@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.1.3 (2022-09-25)
+
+- Changed pages max_length from 2055 to 4095
+- Added recommended resolution for blog/project image (1040px * 585px)
+
 ## 1.1.2 (2022-09-21)
 
 - Fixed email notification (contact-form and comments)
