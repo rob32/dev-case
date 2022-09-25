@@ -32,7 +32,7 @@ django==4.1.1
     #   django-simple-captcha
     #   django-solo
     #   django-storages
-django-debug-toolbar==3.6.0
+django-debug-toolbar==3.7.0
     # via -r requirements-dev.in
 django-environ==0.9.0
     # via -r requirements.txt
