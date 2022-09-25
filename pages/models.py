@@ -3,22 +3,6 @@ from django.urls import reverse
 
 from solo.models import SingletonModel
 
-EXAMPLE_CONTENT = """
-
-## Lorem Ipsum
-
-Lorem ipsum dolor sit amet, **consectetur**.
-Lorem ipsum dolor sit amet, __consectetur__.
-Lorem ipsum dolor sit amet, `consectetur`...
-
-## Ipsum Lorem
-
-Lorem ipsum dolor sit amet, **consectetur**.
-Lorem ipsum dolor sit amet, __consectetur__.
-Lorem ipsum dolor sit amet, `consectetur`...
-
-"""
-
 
 class Page(models.Model):
     title = models.CharField(
@@ -34,9 +18,8 @@ class Page(models.Model):
         unique=True,
     )
     content = models.TextField(
-        max_length=2055,
+        max_length=4095,
         help_text="Markdown supported.",
-        default=EXAMPLE_CONTENT,
     )
     updated = models.DateTimeField(
         auto_now=True,
@@ -121,7 +104,6 @@ class AboutSiteConfig(SingletonModel):
     )
     markdown_content = models.TextField(
         max_length=4095,
-        default=EXAMPLE_CONTENT,
         help_text="Main About-Content. Markdown supported",
         blank=True,
         null=True,
