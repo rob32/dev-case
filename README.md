@@ -187,6 +187,15 @@ The `DEFAULT_FROM_EMAIL` variable needs to have a valid value (example: admin@ex
 
 This will notify you when there are new comments or when you receive a message via the contact page.
 
+If you also want to be notified in case of server errors, set the environment variable `DJANGO_ADMINS` with your name and email address. Example:
+
+```
+DJANGO_ADMINS=YourName:example@example.com
+
+# or more
+DJANGO_ADMINS=NameOne:name-one@example.com,NameTwo:name-two@example.com
+```
+
 ## Umami Analytics
 
 Make sure that the `USE_UMAMI_ANALYTICS` environment variable is set to `True`.
@@ -226,4 +235,3 @@ The project is available under [GNU GPLv3](https://github.com/rob32/dev-case/blo
 ---
 
 If you like the project, please give it a star ⭐
-

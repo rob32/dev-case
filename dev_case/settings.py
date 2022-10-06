@@ -1,7 +1,7 @@
 # Project Name: DevCase
 # Original Author: Robert Burkhardt
 # License: GNU GPLv3
-# Version: 1.1.3
+# Version: 1.2.0
 
 import os
 from pathlib import Path
@@ -238,6 +238,11 @@ CAPTCHA_LENGTH = 3
 USE_EMAIL_SMTP = env.bool("USE_EMAIL_SMTP", default=False)
 EMAIL_NOTIFICATION = env.bool("EMAIL_NOTIFICATION", default=False)
 EMAIL_RECIPIENT = env.str("EMAIL_RECIPIENT", default="")
+
+DJANGO_ADMINS = env.list("DJANGO_ADMINS", default=None)
+
+if DJANGO_ADMINS:
+    ADMINS = [x.split(":") for x in DJANGO_ADMINS]
 
 if USE_EMAIL_SMTP:
     EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
