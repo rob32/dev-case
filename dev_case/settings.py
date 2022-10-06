@@ -239,6 +239,11 @@ USE_EMAIL_SMTP = env.bool("USE_EMAIL_SMTP", default=False)
 EMAIL_NOTIFICATION = env.bool("EMAIL_NOTIFICATION", default=False)
 EMAIL_RECIPIENT = env.str("EMAIL_RECIPIENT", default="")
 
+DJANGO_ADMINS = env.list("DJANGO_ADMINS", default=None)
+
+if DJANGO_ADMINS:
+    ADMINS = [x.split(":") for x in DJANGO_ADMINS]
+
 if USE_EMAIL_SMTP:
     EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
     EMAIL_HOST = env.str("EMAIL_HOST", default="")
