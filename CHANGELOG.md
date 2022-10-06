@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.2.0 (2022-10-06)
+
+- Added option for email notification in case of server errors
+
 ## 1.1.3 (2022-09-25)
 
 - Changed pages max_length from 2055 to 4095
