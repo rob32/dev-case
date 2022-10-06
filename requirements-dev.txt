@@ -10,9 +10,9 @@ asgiref==3.5.2
     #   django
 black==22.8.0
     # via -r requirements-dev.in
-boto3==1.24.76
+boto3==1.24.80
     # via -r requirements.txt
-botocore==1.27.76
+botocore==1.27.80
     # via
     #   -r requirements.txt
     #   boto3
@@ -58,7 +58,7 @@ flake8-isort==4.2.0
     # via -r requirements-dev.in
 gunicorn==20.1.0
     # via -r requirements.txt
-identify==2.5.5
+identify==2.5.6
     # via pre-commit
 isort==5.10.1
     # via
@@ -111,7 +111,7 @@ six==1.16.0
     # via
     #   -r requirements.txt
     #   python-dateutil
-sqlparse==0.4.2
+sqlparse==0.4.3
     # via
     #   -r requirements.txt
     #   django
