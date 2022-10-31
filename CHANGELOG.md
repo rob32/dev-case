@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.2.1 (2022-10-31)
+
+- Fixed typo on about page (interests)
+
 ## 1.2.0 (2022-10-06)
 
 - Added option for email notification in case of server errors
