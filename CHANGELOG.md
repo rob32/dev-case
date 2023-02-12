@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.2.2 (2023-02-12)
+
+- Added mastodon link verification
+
 ## 1.2.1 (2022-10-31)
 
 - Fixed typo on about page (interests)
